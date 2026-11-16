@@ -139,6 +139,31 @@ Record actual inputs, outputs, changed files, and evidence. A test is not Passed
 
 **Evidence:** diff, commit SHA, remote read-back, privacy check.
 
+## Test 7 — Mandatory emoji-guided interaction (Grill Me-style)
+
+**Purpose:** Verify that Council Designer **always uses the required visible semantic emoji markers** during Guided Intent Routing, Discovery, and Council Design. This is a **hard pass/fail requirement**, not a cosmetic preference.
+
+**Preconditions:** A fresh Agent conversation with the latest Council Designer SKILL.md actually loaded. Record the Skill version/hash and the user-visible response transcript. The repository documentation being correct is not sufficient.
+
+**Steps:**
+1. Begin with an ambiguous need: "I have a long-term research problem but I don't know if I need a Council." Inspect the Agent's first reply. It should use meaningful 🔍 as appropriate and ❓ for its question. If choices are offered, they MUST be visibly prefixed by 🧭.
+2. Answer a choice and let the Agent continue guided design for **at least three consecutive turns**. Every guided reply MUST include a relevant semantic emoji; every explicit question MUST carry ❓.
+3. Give a direct, unambiguous request. The Agent should proceed without inventing a needless question, but should still visibly mark confirmation or proposal with ✅ or 💡.
+4. Interrupt with a separate small topic, then resume Council design. Emoji requirements MUST continue to hold on the resumed turn.
+5. Ask for the current confirmed state and next step. The Agent should use ✅ when confirming established decisions and must not claim unconfirmed decisions are final.
+6. Compare all user-visible turns, not just the first response. Save exact offending turn text for any failure.
+
+**Mandatory expected behavior:**
+- Every user-facing guided-interaction reply includes at least one relevant marker from **❓ 🧭 🔍 💡 ✅**, visibly associated with its content.
+- Every explicit guided question has **❓** before it.
+- Every option/route selection block has **🧭** before the options.
+- The markers convey their specified meanings; random or decorative placement does not count.
+- Asking fewer questions because intent is clear is valid; **omitting required markers is not**.
+- Missing or misused required emoji on **any tested turn** makes Test 7 **Failed**, regardless of other answer quality.
+- A static file review alone cannot pass Test 7.
+
+**Evidence:** latest Skill SHA/version, exact prompts, full multi-turn transcript, per-turn emoji check, outcome, deviations and regression notes.
+
 ## Result vocabulary
 
 - **Not Run:** no execution attempted.
