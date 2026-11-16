@@ -1,19 +1,73 @@
-# Memory Rules — V0.1
+# Memory Rules — Council Sources V0.2
 
-## Ownership
+## 1. Ownership and separation
 
-每个 Council 拥有独立的记忆文件；仓库集中保存不代表其他 Council 有权管理其内容。项目原始文档留在原项目，Council 只保存引用与组织决策。
+- Every Council owns its own organizational memory under councils/<slug>/.
+- A shared repository is a storage and versioning arrangement, not a shared command hierarchy.
+- One Council must not silently edit another Council's mission, roles, tasks, or memory.
+- Project facts remain in the Project's authoritative repository or files. Council memory stores organizational context, confirmed decisions, progress summaries, and references—not a duplicate project wiki.
+- Shared principles may be read by all Councils; changes to shared principles require explicit review because they affect the whole system.
 
-## Three update levels
+## 2. Three update levels
 
-- **Level 1 / Routine**：已核实的普通进度、会议摘要、一般问题记录。具有文件写入权限时可按授权自动记录。
-- **Level 2 / Significant**：职责分工、工作流程、重要技术方案变化。先解释差异、影响与风险，等待用户确认（除非事先明确授予该范围自主权）。
-- **Level 3 / Core**：使命、核心目标、根本权限、关键组织原则和用户确认的重大决策。必须取得用户明确授权。
+### Level 1 — Routine
 
-## Evidence and history
+Examples: verified progress, ordinary meeting summaries, completed tasks with evidence, non-sensitive notes, newly discovered links.
 
-每条重要记录尽量标记日期、来源、状态（confirmed/proposed/superseded）、影响范围与替代关系。旧记录不能自动充当永恒命令；不能凭猜测将任务、测试或同步记为完成。
+Handling: may be recorded automatically only within a clearly authorized write scope. Preserve date and source. Do not mark something complete without evidence.
 
-## Synchronization
+### Level 2 — Significant
 
-GitHub 仓库是 Markdown Source 的版本管理来源；GPT Add Sources 通常是导入时的快照。先更新仓库文件，检查变更后再按授权推送；需要更新 GPT 记忆时重新导出并手动导入。若远程发生冲突，停止覆盖并请求处理。
+Examples: responsibility reassignment, workflow changes, important technical/operational decisions, changes to project references, adding or removing a recurring role.
+
+Handling: show the proposed diff, reason, impact, and recommendation. Ask for confirmation unless the user has explicitly delegated this exact class of change.
+
+### Level 3 — Core
+
+Examples: Council mission, primary goal, fundamental principles, user authority, access boundaries, major confirmed decisions, cross-Council governance.
+
+Handling: explicit user approval is required. Never infer approval from silence or from permission to perform unrelated work.
+
+## 3. Record quality
+
+For important records, preserve as many of these fields as appropriate:
+
+- Date or time period.
+- Source/evidence (conversation, document, issue, commit, test, or user confirmation).
+- Status: proposed, confirmed, active, completed, blocked, or superseded.
+- Scope: which Council or Project the record concerns.
+- Decision owner or confirmer when relevant.
+- Link to the replaced decision or follow-up record.
+
+Separate:
+- **Fact:** directly supported by a source or observed action.
+- **Inference:** a reasoned interpretation, not yet confirmed.
+- **Proposal:** a suggested future action.
+- **Unknown:** information not yet available.
+
+Do not turn a proposal into a confirmed rule. Do not treat an old memory as a permanent instruction if later evidence supersedes it.
+
+## 4. Update procedure
+
+1. Read the target Council's current files.
+2. Identify new information and its source.
+3. Compare against existing memory and decisions.
+4. Detect duplicates, contradictions, outdated records, and scope mismatch.
+5. Classify each change as Level 1, 2, or 3.
+6. Apply authorized changes or request confirmation.
+7. Preserve material history; mark old decisions superseded instead of silently deleting them.
+8. Update indexes or exports only when affected.
+9. Read back changed files and verify the final state.
+
+## 5. Conflict handling
+
+- If two records conflict, do not silently choose one. Compare dates, source quality, scope, and explicit user decisions; present unresolved conflicts.
+- If a Project document conflicts with a Council summary, the Project's authoritative source governs Project facts. Update the Council summary after verification.
+- If two Councils disagree, keep both records within their own scope and use an explicit task-scoped coordination decision. Do not merge their memories.
+- If GitHub has remote changes not present locally, stop and reconcile before overwriting.
+
+## 6. Privacy and exports
+
+The canonical Council Sources repository may be public. Do not place private personal data, credentials, private chat transcripts, confidential work, or unlicensed third-party material in public memory or exports. Use a private repository or sanitized summary for sensitive records.
+
+A Source export is a dated snapshot. It must include its Council/system identity, version, export date, source-file manifest, and known omissions. It does not update itself when GitHub changes.
