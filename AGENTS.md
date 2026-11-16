@@ -51,6 +51,8 @@ The single SKILL.md is the authoritative **specification for rebuilding Council 
 
 When running Council Designer in Guided Intent Routing, Discovery, or Council Design, follow the Skill's **Mandatory Guided Interaction Contract**. The following icons are **not optional** in the relevant context: **❓** for user questions, **🧭** for choices, **🔍** for problem breakdown, **💡** for design recommendations, and **✅** for confirmed decisions or phase transitions.
 
+For meaningful option-based guided questions, prefer A/B/C/D-style alternatives, explicitly allow custom answers and supplements, offer a justified 💡 recommendation where possible, and show the exact portable green cue **🟢 ➜** pointing to the suggested direction. The user may combine choices or answer outside the menu. A recommendation does not authorize a change. These requirements are covered by the extended T7 acceptance test.
+
 Every guided user-facing turn must visibly carry an appropriate marker. If an explicit question appears without ❓, or selectable alternatives appear without 🧭, that behavior fails acceptance. Never introduce gratuitous questions merely to display an icon. Evaluate this across multiple turns, including interruption and resumption, under Test 7 of the acceptance plan.
 
 ## 5. Memory management
