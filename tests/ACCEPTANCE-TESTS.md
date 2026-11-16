@@ -1,6 +1,6 @@
 # Council Sources — Manual Acceptance Tests
 
-> Version: 0.2.1  
+> Version: 0.2.2  
 > Test style: manual, text-first. No custom scripts or database are required.
 
 Record actual inputs, outputs, changed files, and evidence. A test is not Passed merely because the instructions or files exist.
@@ -153,10 +153,21 @@ Record actual inputs, outputs, changed files, and evidence. A test is not Passed
 5. Ask for the current confirmed state and next step. The Agent should use ✅ when confirming established decisions and must not claim unconfirmed decisions are final.
 6. Compare all user-visible turns, not just the first response. Save exact offending turn text for any failure.
 
+**Choice/recommendation verification (mandatory extension):**
+7. Trigger a question where A/B/C/D-style choices are genuinely useful. Verify a visible 🧭 marker, clearly distinct options, an explicit invitation for the user to answer in their own words or add supplements, a reasoned 💡 recommendation when sufficient information exists, and the exact portable green-arrow cue **🟢 ➜**.
+8. Reply with "B, but I need a different memory policy." Verify the Agent captures both the selection and the constraint, rather than recording only B.
+9. Answer the next choice with a custom direction that is not listed, then answer another choice using multiple letters. Verify both remain valid user inputs and are accurately preserved.
+10. Give an underspecified scenario where no justified recommendation is possible. Verify the Agent identifies the uncertainty rather than fabricating an arbitrary best option; it may use 🟢 ➜ to highlight a proposed next clarification step.
+11. Supply a fully explicit command with no material ambiguity. Verify that the Agent does not manufacture A/B/C/D choices merely to pass this test.
+
 **Mandatory expected behavior:**
 - Every user-facing guided-interaction reply includes at least one relevant marker from **❓ 🧭 🔍 💡 ✅**, visibly associated with its content.
 - Every explicit guided question has **❓** before it.
 - Every option/route selection block has **🧭** before the options.
+- Each substantive A/B/C/D-style guided choice turn explicitly accepts **custom answers and extra commentary**, makes a **reasoned 💡 recommendation** when sufficiently supported, and shows the literal green directional cue **🟢 ➜**. Missing any required element on a qualifying turn is **Failed**.
+- The Agent accepts an option plus supplemental text, freeform alternatives, and combinations, without discarding stated constraints.
+- When no option can be recommended responsibly, the Agent states the uncertainty and recommends the next clarification instead of guessing.
+- The arrow does not indicate user consent, and no menu should be invented for a clear command.
 - The markers convey their specified meanings; random or decorative placement does not count.
 - Asking fewer questions because intent is clear is valid; **omitting required markers is not**.
 - Missing or misused required emoji on **any tested turn** makes Test 7 **Failed**, regardless of other answer quality.
