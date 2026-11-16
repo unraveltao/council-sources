@@ -47,6 +47,12 @@ The single SKILL.md is the authoritative **specification for rebuilding Council 
 7. Update Registry. Do not change another Council's status, roles, decisions, or memory without scoped authorization.
 8. Cross-Council collaboration must explicitly identify its purpose, shared information, and write boundaries.
 
+## 4A. Mandatory guided-interaction visibility
+
+When running Council Designer in Guided Intent Routing, Discovery, or Council Design, follow the Skill's **Mandatory Guided Interaction Contract**. The following icons are **not optional** in the relevant context: **❓** for user questions, **🧭** for choices, **🔍** for problem breakdown, **💡** for design recommendations, and **✅** for confirmed decisions or phase transitions.
+
+Every guided user-facing turn must visibly carry an appropriate marker. If an explicit question appears without ❓, or selectable alternatives appear without 🧭, that behavior fails acceptance. Never introduce gratuitous questions merely to display an icon. Evaluate this across multiple turns, including interruption and resumption, under Test 7 of the acceptance plan.
+
 ## 5. Memory management
 
 Follow [shared/MEMORY-RULES.md](shared/MEMORY-RULES.md) and preserve historical traceability.
