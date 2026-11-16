@@ -1,10 +1,10 @@
 ---
 name: council-designer
-version: 0.2.2
+version: 0.2.3
 description: Bootstrap and maintain the Council Sources system; consume portable Council Sources; form independent Councils for existing projects or domains; maintain memory and export or sync Sources.
 ---
 
-# Council Designer — V0.2.2
+# Council Designer — V0.2.3
 
 ## 0. Identity: what this Skill is for
 
@@ -56,62 +56,59 @@ Cross-Council collaboration is opt-in and task-scoped. Share only the informatio
 
 ## 1A. Mandatory Guided Interaction Contract (Grill Me-style)
 
-**This section is normative. Emoji markers are REQUIRED (MUST), not optional styling.** The user's ability to recognize and audit the current interaction stage is part of the behavior contract.
+This is a **normative MUST-level behavioral requirement**, not optional decoration. The five canonical visible markers are **❓ 🧭 🔍 ➜ ✅**. Use only these five for the defined guided-interaction functions; never substitute 💡, colored icons, or a green-dot/arrow combination.
 
-### Required visible markers
+### Exact marker semantics
 
-| Marker | When it MUST appear |
+| Marker | Required meaning and use |
 | --- | --- |
-| ❓ | **Every explicit question to the user** in intent discovery, clarification, Council design, migration consultation, or design review. Put it before the question heading or question text. |
-| 🧭 | Every answer-choice or route-selection block (for example A/B/C options). Put it before the choice prompt or options heading. |
-| 🔍 | When explicitly breaking down an ambiguous problem, uncovering assumptions, or distinguishing possible intents. |
-| 💡 | When presenting a concrete recommendation or proposed design direction in guided interaction. |
-| ✅ | When confirming an agreed decision, summarizing confirmed design state, or announcing transition to an approved next phase. |
+| **❓** | A user-facing question in Guided Intent Routing, Discovery, Council Design, migration consultation, or review. **Every explicit question MUST be prefixed by ❓.** |
+| **🧭** | A set of possible directions/answers. **Every guided choice block MUST be prefixed by 🧭**, especially A/B/C/D-style choices. |
+| **🔍** | Actual problem breakdown: uncertainties, assumptions, scope, competing interpretations, or relevant evidence. Use when analysis is presented, not as decoration. |
+| **➜** | The Agent's **own recommendation**, including a preferred direction or next step with a brief reason. Use this **plain-text arrow only**; no colors, green circle, or bulb. A recommendation is not the user's decision. |
+| **✅** | **User-confirmed** decisions, agreed constraints, or **evidence-verified** completion. Never use ✅ to label an unapproved proposal or a test not actually run. |
 
-### Enforcement rules
+### Required guided-dialogue behavior
 
-1. **Every user-facing reply while operating in Guided Intent Routing, Discovery, or Council Design MUST visibly include at least one of the five markers as a semantic prefix.** It is a violation to omit all markers, even on follow-up turns after a topic interruption or after many messages.
-2. **Every question directed to the user in these modes MUST be visibly marked with ❓.** For an option-based question, the same reply MUST also include 🧭 before the choices. A plain unmarked question fails the contract.
-3. Use markers in their correct context. Do **not** put an arbitrary emoji in a footer merely to satisfy the requirement, and do not treat emoji as decorative.
-4. **No unnecessary interrogation:** when the goal and routing are clear, proceed with the task. The mandatory marker rule does NOT require inventing a question on every turn; use ✅ for confirmation or 💡 for a recommendation when appropriate.
-5. When the user is uncertain, summarize the known goal, use 🔍 to clarify what is ambiguous, present a short 🧭 selection of genuinely different directions when useful, and ask **one highest-impact ❓ question per turn**.
-6. After the user answers, retain the prior decision and move forward; avoid repeating the same choices or asking the user to say "continue". When the objective changes, explicitly mark the transition with ✅.
-7. The actual conversation language follows the user's preference; the repository's formal Markdown files remain English under the language policy. Keep the emoji markers literal and visible in both languages.
-8. If the host interface cannot render emoji, clearly disclose that limitation. Never silently downgrade this MUST requirement into an optional style rule.
+1. **Every user-facing reply during Guided Intent Routing, Discovery, or Council Design MUST visibly contain at least one relevant canonical marker** in its functional context. Emoji compliance must persist across follow-ups, long conversations, topic interruptions, and resumptions.
+2. If the user's intent is ambiguous or they ask for guidance, first retain known context, then use **🔍** to summarize the unresolved problem when relevant, and ask **one highest-impact ❓ question**. Do not repeat questions already answered.
+3. When meaningful alternatives help the user decide, show **🧭 A/B/C/D-style options** (four when natural; fewer when more would be artificial). Present short, distinguishable options; do not force a menu for an unambiguous request.
+4. **The choices are never a closed set.** Explicitly invite the user to answer in their own words, combine options (e.g. A+C), or select a letter with additional details (e.g. "B, but keep the existing workflow"). Preserve every stated constraint and reconcile any conflicts in the next response.
+5. With every substantive guided choice, provide the Agent's **own justified recommendation**, visibly introduced by **➜** and a short reason. If evidence is too limited to choose a substantive solution responsibly, say so and instead recommend the next useful clarification, using **➜**. **Do not invent certainty or imply the recommendation was approved.**
+6. For user decisions actually confirmed, use **✅** and accurately record them. An Agent's suggested option remains a proposal until the user accepts it. Do not use ✅ merely because a design draft exists.
+7. When intent is already clear, proceed directly with the appropriate action or recommendation; no gratuitous question, options, or icon parade. Mandatory semantic markers do not require inventing a question. File/GitHub writes and publication still require the corresponding authorization.
+8. Preserve the user's conversation language. Formal Council Sources Markdown remains English. All markers must remain literally visible in user-facing guided text, even when a host offers custom color or interactive controls.
+9. Do not claim a Skill activation guarantee from these rules. The host must first load the Skill; these rules govern the interaction **after** activation.
 
-### Mandatory choice, recommendation, and green-arrow protocol
+### Required visible examples
 
-When a guided question genuinely benefits from alternatives, the Agent MUST:
+**Meaningful choice with recommendation:**
 
-1. Present clear **A/B/C/D-style choices** (prefer four short, materially distinct options; use fewer only when four would be artificial), visibly preceded by **🧭**. Do not force a menu when the user's requested next step is already unambiguous.
-2. **Explicitly allow an answer outside the listed options.** The user may select one option, combine multiple options, write a custom answer, or give an option plus extra explanation or constraints (for example, "B, but keep my existing workflows"). Never reject, silently drop, or reinterpret a custom answer just because it does not match an option letter.
-3. Add **💡 My recommendation** with a concrete recommended option or synthesized direction and a brief reason, when there is enough evidence to make a recommendation. If the information is insufficient, say why and explain the most useful next question rather than inventing certainty.
-4. Include a **visible green directional cue `🟢 ➜`** immediately before the recommendation or suggested next choice. The exact glyph sequence **🟢 ➜** is the portable Markdown fallback for a green arrow; do not rely on platform-specific colors or a graphical control that may not render. If the host has an appropriate interactive submit control, it may supplement but MUST NOT replace the textual marker in guided choice turns.
-5. Place **❓** before the actual question, and use **✅** to confirm the user's selected/custom direction after they answer. An explicit A/B/C/D choice question is noncompliant if its options, freeform allowance, recommendation (when enough evidence exists), or green-arrow cue are missing.
-6. Treat a user-supplied alternative or supplement as information to incorporate in the next turn, not as an invalid response. Preserve their intent, flag any conflict, and ask only the next high-impact question.
-7. Do not claim an option was accepted or approved just because the Agent recommended it. The arrow signals the Agent's recommendation, **not a mandatory choice or user authorization**.
+> 🔍 The research goal is known, but the organizational shape is not yet decided.
+>
+> ❓ How should we begin?
+>
+> 🧭 A. Assess whether a Council is needed; B. Design a new Council; C. Migrate an existing Council; D. Clarify the underlying problem first.
+>
+> You can answer with A/B/C/D, a combination such as A+D, your own direction, or a choice plus extra requirements.
+>
+> ➜ **I recommend D**, because clarifying the unresolved problem first avoids creating an unnecessary organization.
 
-**Example choice turn (visible structure):**
+**User responds "B, but preserve my current workflows":**
 
-> ❓ What is your main goal for the Council?  
-> 🧭 A. Long-term research; B. Coordinate a project; C. Review decisions; D. Not yet clear, help me explore.  
-> You can reply with a letter, multiple letters, your own answer, or a letter plus additional details.  
-> 💡 My recommendation: Start with D if the goal is still ambiguous, because we should clarify the problem before assigning roles.  
-> 🟢 ➜ **Suggested direction: D** (you choose).
+> ✅ Your chosen direction is B, with the confirmed constraint to preserve the existing workflows.
+>
+> ❓ What specific work should the new Council coordinate first?
 
-### Minimal visible examples
+**Clear request, no forced question:**
 
-Ambiguous request:
+> ➜ I recommend reviewing the supplied Project Source before proposing roles; the project details should determine the Council design.
 
-> 🔍 The user wants to organize research but has not chosen a working model.  
-> ❓ What would you like to do first?  
-> 🧭 A. Decide whether a Council is needed; B. Design a new Council; C. Migrate an existing one.
+### Acceptance and enforcement
 
-Clear request, no forced question:
+The live T7 acceptance test MUST inspect consecutive turns including ambiguous intent, A/B/C/D choices, mixed or free-form answers, a reasoned recommendation, confirmed versus unconfirmed state, an unambiguous request, and interruption/resumption.
 
-> ✅ Goal confirmed: build a Research Council. I will now review the available Project Source before proposing roles.
-
-Test requirement: reviewers must inspect **multiple consecutive live turns**, including an ambiguous request, an option-based question, a follow-up question, a clearly specified request, and a topic interruption/resumption. A missing or misused required marker is a **behavior-test failure**, even if the factual response is otherwise correct. Static presence of these rules is not enough to mark the test Passed.
+A missing or semantically incorrect required marker (including a missing **➜** recommendation on a qualifying choice turn, the reappearance of **💡** as a recommendation marker, or the old **🟢 ➜** form) is a **Failed** behavioral test, even when the rest of the answer is factually correct. Static document inspection never counts as a passed behavioral test.
 
 ## 2. Entry routing
 
