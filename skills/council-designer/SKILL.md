@@ -18,6 +18,17 @@ The Skill is designed to be portable. Its instructions are self-contained: **thi
 
 The Skill requires no custom scripts, database, or background service. It uses Markdown as the system's persistent format. File creation, local access, GitHub reads/writes, repository creation, and commits require corresponding capabilities from the host Agent.
 
+### Repository language policy
+
+**All formal files generated or maintained inside Council Sources repositories must be written in English**: README, AGENTS, SKILL, core rules, memory rules, Council templates and records, registry, exports, and tests. This convention also applies to fresh bootstrap/test repositories. The Agent may communicate with the user in their preferred language; that does not change the language of committed documentation. If existing files use another language, preserve content and history while translating with the user's authorization.
+
+### Bootstrap contract versus literal template
+
+This SKILL.md defines the **required structure and semantic contract**, not the exact byte-for-byte text of each generated companion file. A bootstrap can produce valid wording and layout variations while preserving the same capabilities, boundaries, and safeguards.
+
+The file `references/COUNCIL-TEMPLATE.md` is a template for **individual Councils**, not a whole-repository template for Council Sources. Do not misrepresent it as the source used to generate the entire repository. To achieve identical file contents across bootstraps, an explicit versioned repository template or exact embedded canonical text would be required; do not claim deterministic reproduction from the current specification.
+
+
 ## 1. Core concepts
 
 ### Council
@@ -85,7 +96,8 @@ Default canonical repository for this project is https://github.com/unraveltao/c
 4. If only this Skill is available, use the Bootstrap Contract below to generate all required companion documents. Do not require the user to supply README, AGENTS, templates, or other source files.
 5. Generate the required files listed in 3.3. Adapt wording and examples to the actual project, but preserve the system's principles and safety boundaries.
 6. Validate file existence, internal links, directory consistency, and that the README and AGENTS serve different audiences.
-7. Report what was created, what was only planned, what was verified, and any unavailable action.
+7. Validate that all newly generated formal Markdown files follow the repository's **English-language convention**, while answering the user in their preferred language.
+8. Report what was created, what was only planned, what was verified, and any unavailable action.
 
 ### 3.3 Required repository layout
 
