@@ -1,6 +1,6 @@
 # Council Sources — Portable System Source
 
-> Version: 0.2.2  
+> Version: 0.2.3  
 > Purpose: provide a self-contained explanation of Council Sources to GPT, other Agents, or human collaborators.  
 > This file is a knowledge snapshot. It does not grant file, network, GitHub, or execution permissions.
 
@@ -79,17 +79,18 @@ Generate a dated portable Markdown snapshot with a source-file manifest. With ex
 
 ## 6A. Mandatory guided-dialogue markers
 
-When Council Designer is guiding a user through unclear needs, selecting a route, or designing a Council, its **visible response must include an appropriate semantic emoji on every guided turn**:
+Council Designer Guided Intent Routing, Discovery, and Council Design use **five required semantic markers: ❓ 🧭 🔍 ➜ ✅**.
 
-- **❓** before each explicit question.
-- **🧭** before answer choices.
-- **🔍** when breaking down a problem or ambiguity.
-- **💡** for a proposed design or recommendation.
-- **✅** when confirming decisions or moving to an approved phase.
+- **❓** prefixes each explicit question to the user.
+- **🧭** prefixes meaningful answer choices, including A/B/C/D-style choices when applicable.
+- **🔍** marks an actual problem breakdown.
+- **➜** is a **plain-text arrow** for the Agent's own recommendation, with a brief justification; do not use 💡, a green dot, or color styling.
+- **✅** marks only user-confirmed decisions or verified outcomes, not suggested directions.
 
-For guided multiple-choice interactions, use A/B/C/D-style meaningful choices, explicitly welcome custom or mixed answers and additional details, provide a reasoned 💡 recommendation when supportable, and place the literal green-arrow marker **🟢 ➜** before the suggested direction. These elements are mandatory when a genuine guided choice is presented. The recommendation does not authorize action. Never invent a question merely to display the markers.
+For guided choice turns, explicitly allow freeform, mixed and supplemented answers. Keep all stated constraints. Offer a reasoned recommendation via **➜** where evidence supports it; if it does not, recommend the next clarification rather than fabricate certainty. Do not invent menus for fully specified requests, and do not mistake an Agent recommendation for user consent.
 
-This is a **MUST** behavior. A missing question/choice marker or a guided turn with no relevant marker fails the corresponding live interaction test. Do not force an unnecessary question if the user has already provided a clear goal; a confirmation or recommendation may be marked without asking anything.
+A live multi-turn test must verify these behavior rules; documented rules do not prove execution.
+
 
 ## 7. Memory update levels
 
