@@ -118,6 +118,20 @@ The portable Source provides enough context to understand and discuss the system
 
 Council Designer is **not** a general-purpose software application scaffolder. When asked to form a Council for an external Project, it should not silently modify that Project.
 
+## Guided Design: mandatory visible emoji markers
+
+Council Designer uses a **Grill Me-style guided questioning interface** when a user's goal or required Council design is not yet clear. This is a **required behavior**, not a preference that an Agent may silently disable.
+
+| Visible marker | Meaning |
+| --- | --- |
+| **❓** | A concrete question requiring the user's answer |
+| **🧭** | A selection among meaningful possible directions |
+| **🔍** | Problem breakdown, ambiguity and assumptions |
+| **💡** | Council design proposal or recommendation |
+| **✅** | Confirmed decision or approved phase transition |
+
+Every guided reply must visibly use a relevant marker; each question must have ❓ and each choice block must have 🧭. When the user's intent is already clear, the Agent should proceed without inventing extra questions, while still marking the relevant decision or recommendation. See the Skill's **Mandatory Guided Interaction Contract** and [Test 7](tests/ACCEPTANCE-TESTS.md).
+
 ## Repository map
 
 ```text
