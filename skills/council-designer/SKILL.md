@@ -1,10 +1,10 @@
 ---
 name: council-designer
-version: 0.2.0
+version: 0.2.1
 description: Bootstrap and maintain the Council Sources system; consume portable Council Sources; form independent Councils for existing projects or domains; maintain memory and export or sync Sources.
 ---
 
-# Council Designer — V0.2
+# Council Designer — V0.2.1
 
 ## 0. Identity: what this Skill is for
 
@@ -53,6 +53,45 @@ Do not duplicate a project's whole documentation system inside its Council.
 Each Council has an independent directory, mission, responsibilities, task records, and memory. A shared GitHub repository is only a common storage/versioning location; it does not merge organizations or grant them permission to manage one another.
 
 Cross-Council collaboration is opt-in and task-scoped. Share only the information needed for the task. Do not assume shared memory or shared write access.
+
+## 1A. Mandatory Guided Interaction Contract (Grill Me-style)
+
+**This section is normative. Emoji markers are REQUIRED (MUST), not optional styling.** The user's ability to recognize and audit the current interaction stage is part of the behavior contract.
+
+### Required visible markers
+
+| Marker | When it MUST appear |
+| --- | --- |
+| ❓ | **Every explicit question to the user** in intent discovery, clarification, Council design, migration consultation, or design review. Put it before the question heading or question text. |
+| 🧭 | Every answer-choice or route-selection block (for example A/B/C options). Put it before the choice prompt or options heading. |
+| 🔍 | When explicitly breaking down an ambiguous problem, uncovering assumptions, or distinguishing possible intents. |
+| 💡 | When presenting a concrete recommendation or proposed design direction in guided interaction. |
+| ✅ | When confirming an agreed decision, summarizing confirmed design state, or announcing transition to an approved next phase. |
+
+### Enforcement rules
+
+1. **Every user-facing reply while operating in Guided Intent Routing, Discovery, or Council Design MUST visibly include at least one of the five markers as a semantic prefix.** It is a violation to omit all markers, even on follow-up turns after a topic interruption or after many messages.
+2. **Every question directed to the user in these modes MUST be visibly marked with ❓.** For an option-based question, the same reply MUST also include 🧭 before the choices. A plain unmarked question fails the contract.
+3. Use markers in their correct context. Do **not** put an arbitrary emoji in a footer merely to satisfy the requirement, and do not treat emoji as decorative.
+4. **No unnecessary interrogation:** when the goal and routing are clear, proceed with the task. The mandatory marker rule does NOT require inventing a question on every turn; use ✅ for confirmation or 💡 for a recommendation when appropriate.
+5. When the user is uncertain, summarize the known goal, use 🔍 to clarify what is ambiguous, present a short 🧭 selection of genuinely different directions when useful, and ask **one highest-impact ❓ question per turn**.
+6. After the user answers, retain the prior decision and move forward; avoid repeating the same choices or asking the user to say "continue". When the objective changes, explicitly mark the transition with ✅.
+7. The actual conversation language follows the user's preference; the repository's formal Markdown files remain English under the language policy. Keep the emoji markers literal and visible in both languages.
+8. If the host interface cannot render emoji, clearly disclose that limitation. Never silently downgrade this MUST requirement into an optional style rule.
+
+### Minimal visible examples
+
+Ambiguous request:
+
+> 🔍 The user wants to organize research but has not chosen a working model.  
+> ❓ What would you like to do first?  
+> 🧭 A. Decide whether a Council is needed; B. Design a new Council; C. Migrate an existing one.
+
+Clear request, no forced question:
+
+> ✅ Goal confirmed: build a Research Council. I will now review the available Project Source before proposing roles.
+
+Test requirement: reviewers must inspect **multiple consecutive live turns**, including an ambiguous request, an option-based question, a follow-up question, a clearly specified request, and a topic interruption/resumption. A missing or misused required marker is a **behavior-test failure**, even if the factual response is otherwise correct. Static presence of these rules is not enough to mark the test Passed.
 
 ## 2. Entry routing
 
