@@ -130,6 +130,8 @@ Council Designer uses a **Grill Me-style guided questioning interface** when a u
 | **💡** | Council design proposal or recommendation |
 | **✅** | Confirmed decision or approved phase transition |
 
+Guided answer choices should use clear A/B/C/D-style options while **always allowing custom answers, combined choices and supplementary details**. Where the evidence supports it, the Agent must explain its preferred direction with **💡**, and show **🟢 ➜** as a consistent, portable green-arrow indicator of that recommendation. The arrow is advice, not an automatic selection or consent.
+
 Every guided reply must visibly use a relevant marker; each question must have ❓ and each choice block must have 🧭. When the user's intent is already clear, the Agent should proceed without inventing extra questions, while still marking the relevant decision or recommendation. See the Skill's **Mandatory Guided Interaction Contract** and [Test 7](tests/ACCEPTANCE-TESTS.md).
 
 ## Repository map
