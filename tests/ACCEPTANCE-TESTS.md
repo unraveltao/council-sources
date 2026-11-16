@@ -1,6 +1,6 @@
 # Council Sources — Manual Acceptance Tests
 
-> Version: 0.2.0  
+> Version: 0.2.1  
 > Test style: manual, text-first. No custom scripts or database are required.
 
 Record actual inputs, outputs, changed files, and evidence. A test is not Passed merely because the instructions or files exist.
