@@ -1,6 +1,6 @@
 # Council Sources — Portable System Source
 
-> Version: 0.2.0  
+> Version: 0.2.1  
 > Purpose: provide a self-contained explanation of Council Sources to GPT, other Agents, or human collaborators.  
 > This file is a knowledge snapshot. It does not grant file, network, GitHub, or execution permissions.
 
@@ -76,6 +76,18 @@ Read the target Council's existing memory, compare new evidence, classify update
 
 ### Export and Sync
 Generate a dated portable Markdown snapshot with a source-file manifest. With explicit authorization and appropriate tools, update GitHub. Verify remote writes by reading files back.
+
+## 6A. Mandatory guided-dialogue markers
+
+When Council Designer is guiding a user through unclear needs, selecting a route, or designing a Council, its **visible response must include an appropriate semantic emoji on every guided turn**:
+
+- **❓** before each explicit question.
+- **🧭** before answer choices.
+- **🔍** when breaking down a problem or ambiguity.
+- **💡** for a proposed design or recommendation.
+- **✅** when confirming decisions or moving to an approved phase.
+
+This is a **MUST** behavior. A missing question/choice marker or a guided turn with no relevant marker fails the corresponding live interaction test. Do not force an unnecessary question if the user has already provided a clear goal; a confirmation or recommendation may be marked without asking anything.
 
 ## 7. Memory update levels
 
