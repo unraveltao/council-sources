@@ -1,6 +1,6 @@
 # Council Sources — Test Results
 
-> Version: 0.2.2  
+> Version: 0.2.3  
 > This file is an evidence log. Do not mark tests Passed until they have actually been executed and verified.
 
 ## Current status
@@ -13,7 +13,7 @@
 | T4 — Memory update and approval levels | Not Run | Pending controlled memory test |
 | T5 — Portable Source in fresh context | Not Run | Pending separate-context test |
 | T6 — GitHub synchronization | Not Run | Pending authorized write/read-back test |
-| T7 — Mandatory emoji-guided interaction | Not Run | Expanded emoji, A/B/C/D, freeform/supplement, recommendation and 🟢 ➜ acceptance requires a fresh multi-turn Agent test. Static rules do not prove compliance. |
+| T7 — Mandatory five-marker guided interaction | Not Run | Five markers ❓ 🧭 🔍 ➜ ✅; custom/mixed input and recommendation behavior require fresh live multi-turn testing; static inspection is not proof. |
 
 ## Initial repository work
 
