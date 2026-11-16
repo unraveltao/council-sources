@@ -6,7 +6,7 @@ Create an entry only after a real Council has been designed and its directory ex
 
 | Council | Type / Scope | Related Project or Domain | Directory | Status | Last reviewed |
 | --- | --- | --- | --- | --- | --- |
-| — | No formal Councils registered yet | — | — | Empty registry | — |
+| Personal Learning Council | Domain / Education | Unravel Language + AI Engineering | `councils/personal-learning/` | Active — initial formation; acceptance pending | 2026-11-17 |
 
 ## Status values
 
