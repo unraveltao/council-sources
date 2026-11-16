@@ -14,6 +14,8 @@
 | T5 — Portable Source in fresh context | Not Run | Pending separate-context test |
 | T6 — GitHub synchronization | Not Run | Pending authorized write/read-back test |
 
+| T7 — Mandatory emoji-guided interaction | Not Run | New mandatory behavior; requires a fresh multi-turn Agent test. Static spec change does not prove compliance. |
+
 ## Initial repository work
 
 - V0.2 documentation and Skill specification were prepared in the existing Council Sources repository.
