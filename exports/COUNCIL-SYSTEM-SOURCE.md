@@ -1,6 +1,6 @@
 # Council Sources — Portable System Source
 
-> Version: 0.2.1  
+> Version: 0.2.2  
 > Purpose: provide a self-contained explanation of Council Sources to GPT, other Agents, or human collaborators.  
 > This file is a knowledge snapshot. It does not grant file, network, GitHub, or execution permissions.
 
@@ -86,6 +86,8 @@ When Council Designer is guiding a user through unclear needs, selecting a route
 - **🔍** when breaking down a problem or ambiguity.
 - **💡** for a proposed design or recommendation.
 - **✅** when confirming decisions or moving to an approved phase.
+
+For guided multiple-choice interactions, use A/B/C/D-style meaningful choices, explicitly welcome custom or mixed answers and additional details, provide a reasoned 💡 recommendation when supportable, and place the literal green-arrow marker **🟢 ➜** before the suggested direction. These elements are mandatory when a genuine guided choice is presented. The recommendation does not authorize action. Never invent a question merely to display the markers.
 
 This is a **MUST** behavior. A missing question/choice marker or a guided turn with no relevant marker fails the corresponding live interaction test. Do not force an unnecessary question if the user has already provided a clear goal; a confirmation or recommendation may be marked without asking anything.
 
