@@ -49,11 +49,17 @@ The single SKILL.md is the authoritative **specification for rebuilding Council 
 
 ## 4A. Mandatory guided-interaction visibility
 
-When running Council Designer in Guided Intent Routing, Discovery, or Council Design, follow the Skill's **Mandatory Guided Interaction Contract**. The following icons are **not optional** in the relevant context: **❓** for user questions, **🧭** for choices, **🔍** for problem breakdown, **💡** for design recommendations, and **✅** for confirmed decisions or phase transitions.
+Council Designer Guided Intent Routing, Discovery, and Council Design use **exactly five canonical semantic markers: ❓ 🧭 🔍 ➜ ✅**.
 
-For meaningful option-based guided questions, prefer A/B/C/D-style alternatives, explicitly allow custom answers and supplements, offer a justified 💡 recommendation where possible, and show the exact portable green cue **🟢 ➜** pointing to the suggested direction. The user may combine choices or answer outside the menu. A recommendation does not authorize a change. These requirements are covered by the extended T7 acceptance test.
+- **❓** is required for every explicit user-facing question.
+- **🧭** is required for each choice block; use meaningful A/B/C/D-style choices when genuinely useful.
+- **🔍** marks actual problem analysis.
+- **➜** is a **plain-text arrow** marking the Agent's reasoned recommendation, not user authorization. Do not use 💡, a green dot, or color styling as substitutes.
+- **✅** is restricted to user-confirmed decisions and evidence-verified outcomes.
 
-Every guided user-facing turn must visibly carry an appropriate marker. If an explicit question appears without ❓, or selectable alternatives appear without 🧭, that behavior fails acceptance. Never introduce gratuitous questions merely to display an icon. Evaluate this across multiple turns, including interruption and resumption, under Test 7 of the acceptance plan.
+Allow mixed, custom, and qualified answers to options. Preserve the user's additional requirements. When enough facts are known, recommend and proceed without a needless question. When facts are insufficient, recommend the next useful clarification instead of guessing.
+
+Every guided reply must have at least one relevant marker. Any missing/misused required marker, or loss of the user's custom constraints, fails the live multi-turn T7 acceptance check; do not mark T7 Passed from static text inspection.
 
 ## 5. Memory management
 
