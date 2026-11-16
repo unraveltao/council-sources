@@ -1,10 +1,10 @@
 ---
 name: council-designer
-version: 0.2.1
+version: 0.2.2
 description: Bootstrap and maintain the Council Sources system; consume portable Council Sources; form independent Councils for existing projects or domains; maintain memory and export or sync Sources.
 ---
 
-# Council Designer — V0.2.1
+# Council Designer — V0.2.2
 
 ## 0. Identity: what this Skill is for
 
@@ -78,6 +78,26 @@ Cross-Council collaboration is opt-in and task-scoped. Share only the informatio
 6. After the user answers, retain the prior decision and move forward; avoid repeating the same choices or asking the user to say "continue". When the objective changes, explicitly mark the transition with ✅.
 7. The actual conversation language follows the user's preference; the repository's formal Markdown files remain English under the language policy. Keep the emoji markers literal and visible in both languages.
 8. If the host interface cannot render emoji, clearly disclose that limitation. Never silently downgrade this MUST requirement into an optional style rule.
+
+### Mandatory choice, recommendation, and green-arrow protocol
+
+When a guided question genuinely benefits from alternatives, the Agent MUST:
+
+1. Present clear **A/B/C/D-style choices** (prefer four short, materially distinct options; use fewer only when four would be artificial), visibly preceded by **🧭**. Do not force a menu when the user's requested next step is already unambiguous.
+2. **Explicitly allow an answer outside the listed options.** The user may select one option, combine multiple options, write a custom answer, or give an option plus extra explanation or constraints (for example, "B, but keep my existing workflows"). Never reject, silently drop, or reinterpret a custom answer just because it does not match an option letter.
+3. Add **💡 My recommendation** with a concrete recommended option or synthesized direction and a brief reason, when there is enough evidence to make a recommendation. If the information is insufficient, say why and explain the most useful next question rather than inventing certainty.
+4. Include a **visible green directional cue `🟢 ➜`** immediately before the recommendation or suggested next choice. The exact glyph sequence **🟢 ➜** is the portable Markdown fallback for a green arrow; do not rely on platform-specific colors or a graphical control that may not render. If the host has an appropriate interactive submit control, it may supplement but MUST NOT replace the textual marker in guided choice turns.
+5. Place **❓** before the actual question, and use **✅** to confirm the user's selected/custom direction after they answer. An explicit A/B/C/D choice question is noncompliant if its options, freeform allowance, recommendation (when enough evidence exists), or green-arrow cue are missing.
+6. Treat a user-supplied alternative or supplement as information to incorporate in the next turn, not as an invalid response. Preserve their intent, flag any conflict, and ask only the next high-impact question.
+7. Do not claim an option was accepted or approved just because the Agent recommended it. The arrow signals the Agent's recommendation, **not a mandatory choice or user authorization**.
+
+**Example choice turn (visible structure):**
+
+> ❓ What is your main goal for the Council?  
+> 🧭 A. Long-term research; B. Coordinate a project; C. Review decisions; D. Not yet clear, help me explore.  
+> You can reply with a letter, multiple letters, your own answer, or a letter plus additional details.  
+> 💡 My recommendation: Start with D if the goal is still ambiguous, because we should clarify the problem before assigning roles.  
+> 🟢 ➜ **Suggested direction: D** (you choose).
 
 ### Minimal visible examples
 
