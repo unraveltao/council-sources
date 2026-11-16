@@ -118,21 +118,22 @@ The portable Source provides enough context to understand and discuss the system
 
 Council Designer is **not** a general-purpose software application scaffolder. When asked to form a Council for an external Project, it should not silently modify that Project.
 
-## Guided Design: mandatory visible emoji markers
+## Guided Design: required five-marker interface
 
-Council Designer uses a **Grill Me-style guided questioning interface** when a user's goal or required Council design is not yet clear. This is a **required behavior**, not a preference that an Agent may silently disable.
+When a user's goal or Council design is unclear, Council Designer guides the discussion rather than forcing the user to know internal feature names. **These five exact markers are required in guided dialogue**:
 
-| Visible marker | Meaning |
+| Marker | Meaning |
 | --- | --- |
-| **❓** | A concrete question requiring the user's answer |
-| **🧭** | A selection among meaningful possible directions |
-| **🔍** | Problem breakdown, ambiguity and assumptions |
-| **💡** | Council design proposal or recommendation |
-| **✅** | Confirmed decision or approved phase transition |
+| **❓** | One high-impact question needing an answer |
+| **🧭** | A genuine choice of directions, often A/B/C/D |
+| **🔍** | Problem analysis, ambiguity and assumptions |
+| **➜** | The Agent's own recommendation and brief reason, shown with a **plain-text arrow only** |
+| **✅** | A user-confirmed decision or a verified completion |
 
-Guided answer choices should use clear A/B/C/D-style options while **always allowing custom answers, combined choices and supplementary details**. Where the evidence supports it, the Agent must explain its preferred direction with **💡**, and show **🟢 ➜** as a consistent, portable green-arrow indicator of that recommendation. The arrow is advice, not an automatic selection or consent.
+Choices are **open-ended**: the user may select a letter, combine options, write a different answer, or append constraints such as "B, but keep the current workflow." The Agent must preserve these details. If there is insufficient evidence for a substantive recommendation, **➜** should recommend the next clarification step instead.
 
-Every guided reply must visibly use a relevant marker; each question must have ❓ and each choice block must have 🧭. When the user's intent is already clear, the Agent should proceed without inventing extra questions, while still marking the relevant decision or recommendation. See the Skill's **Mandatory Guided Interaction Contract** and [Test 7](tests/ACCEPTANCE-TESTS.md).
+A proposed direction is not approved merely because the Agent recommends it. Do not use ✅ for unconfirmed suggestions, or 💡 / a colored-dot arrow for recommendations. Never force a question or menu when the task is clear. See the Skill's mandatory guided-interaction contract and [T7 acceptance test](tests/ACCEPTANCE-TESTS.md).
+
 
 ## Repository map
 
