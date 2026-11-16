@@ -26,6 +26,8 @@ Record actual inputs, outputs, changed files, and evidence. A test is not Passed
 - AGENTS contains operational and safety rules.
 - No sample Council is registered as real.
 - No custom script, database, or service is introduced.
+- All formal generated Markdown files use English, regardless of the user's conversation language.
+- Generated README and AGENTS match the Skill's semantic contract; byte-identical copying is not required without an explicit versioned full-repository template.
 - The Agent accurately reports any unavailable GitHub operation.
 
 **Evidence:** destination tree, file contents, Agent completion report.
