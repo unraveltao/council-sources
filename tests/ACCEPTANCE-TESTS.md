@@ -1,6 +1,6 @@
 # Council Sources — Manual Acceptance Tests
 
-> Version: 0.2.2  
+> Version: 0.2.3  
 > Test style: manual, text-first. No custom scripts or database are required.
 
 Record actual inputs, outputs, changed files, and evidence. A test is not Passed merely because the instructions or files exist.
@@ -139,41 +139,38 @@ Record actual inputs, outputs, changed files, and evidence. A test is not Passed
 
 **Evidence:** diff, commit SHA, remote read-back, privacy check.
 
-## Test 7 — Mandatory emoji-guided interaction (Grill Me-style)
+## Test 7 — Mandatory five-marker guided interaction (Grill Me-style)
 
-**Purpose:** Verify that Council Designer **always uses the required visible semantic emoji markers** during Guided Intent Routing, Discovery, and Council Design. This is a **hard pass/fail requirement**, not a cosmetic preference.
+**Purpose:** Verify the exact five-marker contract **❓ 🧭 🔍 ➜ ✅** in a fresh, actual multi-turn Council Designer run. Marker semantics and correct user choice handling are mandatory acceptance criteria.
 
-**Preconditions:** A fresh Agent conversation with the latest Council Designer SKILL.md actually loaded. Record the Skill version/hash and the user-visible response transcript. The repository documentation being correct is not sufficient.
+**Preconditions:**
+- Open a fresh Agent/GPT session with the intended Council Designer SKILL.md actually loaded.
+- Capture its version/blob SHA, available capabilities and the full user-visible transcript.
+- Do not give the tested Agent this hidden test script if independent blind behavior is intended.
 
-**Steps:**
-1. Begin with an ambiguous need: "I have a long-term research problem but I don't know if I need a Council." Inspect the Agent's first reply. It should use meaningful 🔍 as appropriate and ❓ for its question. If choices are offered, they MUST be visibly prefixed by 🧭.
-2. Answer a choice and let the Agent continue guided design for **at least three consecutive turns**. Every guided reply MUST include a relevant semantic emoji; every explicit question MUST carry ❓.
-3. Give a direct, unambiguous request. The Agent should proceed without inventing a needless question, but should still visibly mark confirmation or proposal with ✅ or 💡.
-4. Interrupt with a separate small topic, then resume Council design. Emoji requirements MUST continue to hold on the resumed turn.
-5. Ask for the current confirmed state and next step. The Agent should use ✅ when confirming established decisions and must not claim unconfirmed decisions are final.
-6. Compare all user-visible turns, not just the first response. Save exact offending turn text for any failure.
+**Steps and expected results:**
 
-**Choice/recommendation verification (mandatory extension):**
-7. Trigger a question where A/B/C/D-style choices are genuinely useful. Verify a visible 🧭 marker, clearly distinct options, an explicit invitation for the user to answer in their own words or add supplements, a reasoned 💡 recommendation when sufficient information exists, and the exact portable green-arrow cue **🟢 ➜**.
-8. Reply with "B, but I need a different memory policy." Verify the Agent captures both the selection and the constraint, rather than recording only B.
-9. Answer the next choice with a custom direction that is not listed, then answer another choice using multiple letters. Verify both remain valid user inputs and are accurately preserved.
-10. Give an underspecified scenario where no justified recommendation is possible. Verify the Agent identifies the uncertainty rather than fabricating an arbitrary best option; it may use 🟢 ➜ to highlight a proposed next clarification step.
-11. Supply a fully explicit command with no material ambiguity. Verify that the Agent does not manufacture A/B/C/D choices merely to pass this test.
+1. **Ambiguous goal:** Say "I have a long-term research problem but don't know whether I need a Council." The Agent should break down ambiguity with 🔍 where appropriate, ask a high-impact ❓ question, and use 🧭 if options are presented.
+2. **Choice turn:** Have the Agent ask a genuinely useful A/B/C/D-style question. Verify 🧭 before the choices, a clear invitation to reply in free text or with combined/qualified options, and **➜** before a reasoned recommendation (or a justified recommendation to clarify first when evidence is insufficient).
+3. **Mixed answer:** Reply "B, but keep my existing workflows." Verify the Agent preserves **both** the selected direction and the added constraint. ✅ may only identify what the user has actually confirmed.
+4. **Freeform and combined answers:** In further turns, provide a custom direction not listed, then "A+C" with an additional note. Both must be valid, and the note must survive subsequent summarization.
+5. **Multi-turn consistency:** Continue guided design for at least three successive Agent replies. Every guided reply must have a contextually correct marker, every question ❓, every choice block 🧭, and every qualifying recommendation ➜.
+6. **Clear instruction:** Give a fully specified request. The Agent must proceed without an invented menu or question, while visibly marking an appropriate justified recommendation/analysis/confirmed state as applicable.
+7. **Interrupt and resume:** Change topics briefly, then resume design. The marker contract and preserved selections must still hold.
+8. **Confirmation distinction:** Ask for confirmed and unconfirmed design choices. The Agent must not apply ✅ to any proposal not actually approved.
+9. **Plain text only:** Verify recommendations use the literal **➜**, not a green circle, colored arrow requirement, or **💡**. Do not confuse a renderer's decorative icon with the canonical text marker.
 
-**Mandatory expected behavior:**
-- Every user-facing guided-interaction reply includes at least one relevant marker from **❓ 🧭 🔍 💡 ✅**, visibly associated with its content.
-- Every explicit guided question has **❓** before it.
-- Every option/route selection block has **🧭** before the options.
-- Each substantive A/B/C/D-style guided choice turn explicitly accepts **custom answers and extra commentary**, makes a **reasoned 💡 recommendation** when sufficiently supported, and shows the literal green directional cue **🟢 ➜**. Missing any required element on a qualifying turn is **Failed**.
-- The Agent accepts an option plus supplemental text, freeform alternatives, and combinations, without discarding stated constraints.
-- When no option can be recommended responsibly, the Agent states the uncertainty and recommends the next clarification instead of guessing.
-- The arrow does not indicate user consent, and no menu should be invented for a clear command.
-- The markers convey their specified meanings; random or decorative placement does not count.
-- Asking fewer questions because intent is clear is valid; **omitting required markers is not**.
-- Missing or misused required emoji on **any tested turn** makes Test 7 **Failed**, regardless of other answer quality.
-- A static file review alone cannot pass Test 7.
+**Pass/fail rules:**
 
-**Evidence:** latest Skill SHA/version, exact prompts, full multi-turn transcript, per-turn emoji check, outcome, deviations and regression notes.
+- The five canonical markers are **❓ 🧭 🔍 ➜ ✅**; their usage must match their assigned meanings.
+- For any explicit user-facing guided question, a missing ❓ is **Failed**.
+- For any guided option block, a missing 🧭, omission of the freeform/supplement allowance, or a missing justified **➜** recommendation/clarification is **Failed**.
+- An invented mandatory choice or a lost custom constraint is **Failed**.
+- Using ✅ for an unapproved recommendation, or requiring **💡** or **🟢 ➜** instead of plain **➜**, is **Failed**.
+- Any tested guided turn lacking a meaningful required marker is **Failed**.
+- Static file checks alone never constitute a Passed behavioral result.
+
+**Evidence:** SKILL.md version and SHA, exact prompts, full multi-turn transcript, per-turn marker and user-constraint audit, failures and regression notes.
 
 ## Result vocabulary
 
