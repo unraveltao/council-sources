@@ -1,36 +1,62 @@
 # <Council Name>
 
-Status: Draft
+> Status: Draft | Version: 0.1 | Last updated: YYYY-MM-DD
 
-## Mission
+## 1. Identity
 
-描述 Council 为什么存在、服务哪个领域或项目、预期交付什么。
+- **Slug:** <stable-directory-name>
+- **Type:** Domain / Project / Temporary / Other
+- **Related Project or Domain:** <name and authoritative link>
+- **Owner / Sponsor:** <user or responsible party>
 
-## Scope
+## 2. Mission and outcomes
 
-- In scope:
-- Out of scope:
+Why does this Council exist? What recurring problem does it organize? What observable outcomes should it produce?
 
-## Roles and responsibilities
+## 3. Scope
 
-以职责为单位设计；一个执行者可以兼任多个职责，不默认真实存在多个 Agent。
+### In scope
+- <responsibilities this Council owns>
+
+### Out of scope
+- <work owned by the Project or another Council>
+
+## 4. Roles and responsibilities
+
+Define responsibilities before deciding how many Agents are needed. One executor may hold multiple roles.
 
 | Role | Responsibility | Executor | Decision boundary |
 | --- | --- | --- | --- |
-| Coordinator | 理解目标、分配工作、检查推进 | 待确定 | 重大变化提交用户 |
+| Coordinator | Understand goals, coordinate work, track unresolved issues | <one Agent/person or shared> | Routine coordination within approved scope |
 
-## Working loop
+Add specialist roles only when complexity, frequency, workload, expertise, or independent review justifies them.
 
-接收目标 → 理清问题 → 按需分配 → 执行 → 检查结果 → 遇到问题再处理 → 继续。
+## 5. Working loop
 
-## Authorization and escalation
+Receive goal → clarify the problem → allocate responsibilities as needed → execute → verify result → resolve issues when they arise → update relevant memory.
 
-日常职责调整可以按已授权规则处理；重要变更或高风险外部操作要请求批准。
+## 6. Decision and authorization
 
-## Memory
+- What can the Council decide autonomously?
+- What can the user directly assign or override?
+- Which changes require user approval?
+- Which external actions require explicit permission?
 
-参见同目录 MEMORY.md；引用项目原始资料而不是重复存储。
+## 7. Collaboration boundaries
 
-## Acceptance
+- Other Councils this Council may request support from:
+- Information that may be shared:
+- Information or files that must remain isolated:
+- How a collaboration request is recorded and closed:
 
-写出可观察的实际使用场景和验收标准。
+## 8. Project references
+
+Link to authoritative project documents, repositories, task trackers, and deliverables. Do not copy the full Project documentation here.
+
+## 9. Memory
+
+At minimum, maintain a sibling MEMORY.md. Add DECISIONS.md, TASKS.md, ISSUES.md, or workflows/ only when they solve a real recurring need. Follow shared/MEMORY-RULES.md.
+
+## 10. Acceptance
+
+Describe one or more realistic scenarios that demonstrate this Council is useful. Define observable success conditions rather than claiming success at creation time.
