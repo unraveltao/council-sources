@@ -7,7 +7,7 @@ This document tells authorized AI Agents how to **read, maintain, validate, and 
 1. The entry Skill is [skills/council-designer/SKILL.md](skills/council-designer/SKILL.md). It defines the operational modes and complete **System Bootstrap Contract**. The Skill must be sufficient to generate the system from scratch without preexisting companion files.
 2. This AGENTS.md governs repository maintenance, safety, authorization, and validation. It does not run the daily work of individual Councils.
 3. [README.md](README.md) explains the system to people and Agents. It is an introduction, not an independent source of new operational powers.
-4. [core/](core/), [shared/](shared/), [references/](references/), and [exports/](exports/) contain readable specifications and generated snapshots. If these disagree with the Skill, report the inconsistency and reconcile it with user authority; do not silently override one document.
+4. [core principles](core/PRINCIPLES.md), [memory rules](shared/MEMORY-RULES.md), [Council templates](references/COUNCIL-TEMPLATE.md), and [exports](exports/README.md) contain readable specifications and generated snapshots. If these disagree with the Skill, report the inconsistency and reconcile it with user authority; do not silently override one document.
 5. Each Council owns its independent `COUNCIL.md`, `MEMORY.md`, and optional decision/task files. One GitHub repository does not imply one shared management hierarchy.
 
 ## 2. Read before acting
