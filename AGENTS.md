@@ -28,7 +28,7 @@ The single SKILL.md is the authoritative **specification for rebuilding Council 
 - Inspect the destination first. If the repository already contains files, preserve and reconcile them; do not delete and recreate it.
 - Use the Skill's required file manifest and companion-file requirements to construct the system. Do not depend on an external template or a second hidden file for initial bootstrap.
 - Produce README, AGENTS, core principles and architecture, memory rules, Council template, Council directory guide, Registry, export guide, portable Source, and tests.
-- **Write formal repository Markdown documentation in English.** Conversation and explanation to the user may use their preferred language. When generating files in a test repository, apply the same English convention.
+- **Write formal repository documentation in English, with exactly one bilingual exception: `README.md` and `README.zh-CN.md`.** `README.md` is the English primary version; `README.zh-CN.md` is its Simplified Chinese counterpart. Keep their structure, capabilities, permissions, limitations, examples, and validation status aligned. All other formal repository Markdown files—including generated bootstrap files and test-repository files—must be English. Conversation and explanations to the user may use their preferred language.
 - README must clearly explain purpose, use cases, capabilities, actual validation status, quick start, inputs (Skill/GitHub/text/local), source limitations, and navigation.
 - AGENTS must describe scope, safe operating procedure, Council isolation, memory permissions, publishing checks, and verification.
 - Avoid fake example Councils and empty documentation introduced purely for appearance.
