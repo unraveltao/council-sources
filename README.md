@@ -8,8 +8,6 @@ Council Sources is the Markdown-first home for defining, maintaining, and sharin
 
 A Council can start with a minimal structure and grow as the user's projects and needs evolve. A single GPT conversation may handle a simple task; more complex work can involve multiple role perspectives, separate GPT Workers, or execution tools such as Codex. The human remains the organization lead and retains final decision authority.
 
-[简体中文文档](README.zh-CN.md)
-
 > **Project status:** V0.2 prototype. Acceptance testing is incomplete. Council Designer is currently version 0.2.3. See [Project Status](#project-status--contributing) and the [test records](tests/TEST-RESULTS.md).
 
 ## Why Council?
@@ -59,7 +57,7 @@ Start with a small Council. Add roles, workflows, records, or specialist Agents 
 Council separates organizational responsibilities from the tools that perform them.
 
 1. **Human — Organization Lead:** sets goals, provides context, approves important decisions, and can change priorities.
-2. **Orchestrator — Coordination responsibility:** helps understand the task, proposes role allocation, coordinates discussion and handoffs, and summarizes outcomes. It may be performed by GPT; it does not inherently require a separate runtime or Agent.
+2. **Coordination responsibility (when needed):** helps clarify the task, propose role allocation, coordinate handoffs, and consolidate outcomes. This responsibility may be handled by the human lead, GPT, or another executor; it is not a mandatory component or a separate Agent.
 3. **Roles — Responsibilities:** describe work such as design, research, review, teaching, or implementation.
 4. **Agents / Executors — Actors:** GPT, GPT Workers, Codex, other AI tools, or people may perform one or more roles, depending on their actual capabilities.
 5. **Workflows — Ways of working:** define how a task moves from clarification through research, design, execution, review, and completion.
@@ -67,7 +65,7 @@ Council separates organizational responsibilities from the tools that perform th
 
 A typical collaboration loop is:
 
-**User goal → Orchestrator proposes a plan → roles contribute → results are reviewed and consolidated → user decides → authorized work is executed → verified outcomes are recorded.**
+**User goal → clarify and plan → allocate responsibilities as needed → review and consolidate results → user decides → authorized work is executed → verified outcomes are recorded.**
 
 This may happen in one conversation or across multiple tools and conversations. Do not claim that separate Agents communicated or executed work unless that actually happened.
 
@@ -79,7 +77,7 @@ This may happen in one conversation or across multiple tools and conversations. 
 | **Project** | The work being built, learned, researched, or delivered. Its own repository or knowledge base remains authoritative for project artifacts. |
 | **Role** | A responsibility or capability, such as Designer or Reviewer. |
 | **Agent / Executor** | The person or AI performing a role. One Agent may perform several roles; one role may be performed by different Agents. |
-| **Orchestrator** | The coordination responsibility that organizes work and handoffs. It is not necessarily a separate Agent. |
+| **Coordination responsibility** | An optional responsibility for organizing work and handoffs; it may be performed by the human lead or an available Agent. |
 | **Memory** | The Council's maintained organizational context, not a transcript of every conversation. |
 | **Source** | Information supplied to an Agent through a GitHub URL, Markdown text, or accessible local files. |
 | **Council Sources** | This repository: the system's specifications, Council records, templates, registry, tests, and portable exports. |
@@ -122,11 +120,28 @@ A link or imported document provides information; it does not grant filesystem a
 
 Explain what work the Council should coordinate and provide the relevant Project or domain context. Ask Council Designer to propose the mission, scope, responsibilities, decision boundaries, memory structure, and acceptance criteria.
 
-Review the proposal and confirm it before creation. Council Designer must not modify an external Project repository merely because you asked it to design a Council for that Project.
+Review the proposal and confirm it before creation. Choose a writable Council Sources destination: creating or updating Council files requires write access there. Reading an external Project usually needs only read access. Council Designer must not modify an external Project repository merely because you asked it to design a Council for that Project.
 
 ### 4. Maintain and use the Council
 
 Use the Council's records as the shared organizational context. Ask for help planning work, discussing decisions, assigning responsibilities, reviewing results, or recording verified progress. Add roles and supporting files only when they solve a real need.
+
+## Quick start: create your first Council
+
+Imagine a small **File Organizer** project that scans selected folders, classifies files, and proposes an organization plan before any files are moved.
+
+1. Load [Council Designer](skills/council-designer/SKILL.md) in a compatible AI host.
+2. Provide the Project's GitHub URL, Markdown specification, or accessible local folder.
+3. Ensure the Agent can read the Project and write to your chosen Council Sources destination.
+4. Ask: **"Use Council Designer to inspect this File Organizer project and propose a Council. Do not modify the Project repository."**
+5. Review the proposed mission, scope, responsibilities, decision boundaries, and acceptance criteria.
+6. Confirm the design before authorizing creation.
+7. Have the Agent create `councils/file-organizer/COUNCIL.md` and `MEMORY.md`.
+8. Have it update `registry/councils.md` and read back the changed files.
+9. Ask the File Organizer Council to plan the next milestone, using the Project repository as the source of truth.
+10. Record verified progress and decisions under the applicable memory approval level.
+
+If the Agent lacks write access, it can prepare the proposal, but must not claim that Council files were created.
 
 ## Source, export, and synchronization
 
