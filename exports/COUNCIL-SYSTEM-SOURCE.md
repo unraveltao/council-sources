@@ -45,7 +45,7 @@ Simple work should stay simple. Split responsibilities when complexity, repetiti
 ## 5. Council Sources architecture
 
 - **Council Designer Skill:** single entry for bootstrap, Source reading, Council creation, memory maintenance, export, sync, and review.
-- **README.md:** human/Agent guide to purpose, features, navigation, and usage.
+- **README.md / README.zh-CN.md:** English primary human/Agent guide and its synchronized Simplified Chinese counterpart. These are the only bilingual formal documents; all other repository documentation is English.
 - **AGENTS.md:** repository maintenance rules and safety boundaries.
 - **core/:** principles and system architecture.
 - **shared/MEMORY-RULES.md:** memory ownership, update levels, evidence, conflict handling, and privacy.
