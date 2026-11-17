@@ -34,14 +34,14 @@ No live functional acceptance test for Council Designer v0.3.0 has been recorded
 ## Static documentation validation — 2026-11-17
 
 > Status: Passed (static documentation/structure checks only)  
-> Validated source commit: 53d94fb9dadec39330abf8bdfce017c194ab776a
+> Validated source commit: e5ca87fc35553ed4b508f145e8b5eaef00caee17
 
 Checks performed by reading the committed files back from the PR branch:
 
 - Confirmed the Registry has separate Lifecycle Status and Acceptance Status columns, the defined values, and the rule that Active does not imply Passed.
 - Confirmed Council Designer is version 0.3.0 and contains the QD, Checkpoint, and Review method definitions.
 - Confirmed the Skill and Export Guide specify one self-contained Markdown file per intended context by default, with source metadata and an exact source manifest.
-- Confirmed System and Personal Learning Council exports contain source manifests referencing the validated source revision.
+- Confirmed System and Personal Learning Council exports were regenerated from source revision e5ca87fc35553ed4b508f145e8b5eaef00caee17 and contain matching source-manifest revisions.
 - Confirmed all source paths listed in the two export manifests exist in the repository tree.
 - Confirmed T1–T10 are defined in ACCEPTANCE-TESTS.md and all ten current-version test statuses remain Not Run.
 - Confirmed the English and Simplified Chinese README versions both reference Skill v0.3.0 and describe the three methods.
