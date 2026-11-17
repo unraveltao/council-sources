@@ -10,7 +10,7 @@ Council Sources 是用于定义、维护和共享这些组织的 Markdown 优先
 
 [Read in English](README.md)
 
-> **项目状态：** V0.2 原型，验收测试尚未完成。Council Designer 当前版本为 0.2.3。详见[项目状态](#项目状态与贡献)和[测试记录](tests/TEST-RESULTS.md)。
+> **项目状态：** V0.2 原型，验收测试尚未完成。Council Designer 当前版本为 0.3.0。详见[项目状态](#项目状态与贡献)和[测试记录](tests/TEST-RESULTS.md)。
 
 ## 为什么需要 Council？
 
@@ -70,6 +70,20 @@ Council 将组织职责与实际执行工作的工具区分开来。
 **用户提出目标 → 澄清并制定计划 → 按需分配职责 → 审查并汇总结果 → 用户决策 → 授权执行 → 记录经过验证的结果。**
 
 这个过程可以在一个对话中完成，也可以跨越多个工具和对话。除非确实发生，否则不得声称不同 Agent 已经互相通信或执行了工作。
+
+## 共享协作方法
+
+Council Designer v0.3.0 在适用场景中使用三种精简的协作方法：
+
+| 方法 | 职责 |
+| --- | --- |
+| **QD** | 通过问题与共同理解驱动整个工作过程。 |
+| **Checkpoint** | 记录当前阶段、已完成工作、剩余问题/任务、阻塞因素和下一步。 |
+| **Review** | 评价实际结果、核对证据、总结经验并准备所需交付物。 |
+
+QD 可以贯穿任务并反复触发；Checkpoint 在有意义的进度节点记录状态；Review 通常在任务或里程碑结束时使用。它们是灵活的方法，不是必须依次执行的三个阶段。是否要求每个独立 Council 都采用这些方法，仍属于待确认的系统设计决策。
+
+详见[组织运行模型设计草案](docs/design/OPERATING-MODEL-DRAFT.md)和 [Council Designer Skill](skills/council-designer/SKILL.md)。
 
 ## 核心概念
 
@@ -166,11 +180,12 @@ Council Designer 支持三种输入形式：
 | [Memory Rules](shared/MEMORY-RULES.md) | 记忆归属、审批等级、证据、冲突和隐私 |
 | [Council Template](references/COUNCIL-TEMPLATE.md) | 单个 Council 的起始结构 |
 | [Council Directory Guide](councils/README.md) | 每个 Council 的必需和可选文件 |
-| [Council Registry](registry/councils.md) | 实际存在的 Council 及其状态 |
-| [Export Guide](exports/README.md) | 创建和审查可移植快照 |
+| [Council Registry](registry/councils.md) | Council 索引，分别记录生命周期状态和验收状态 |
+| [Export Guide](exports/README.md) | 单目标单文件导出、元数据、来源清单与审查规则 |
 | [Portable System Source](exports/COUNCIL-SYSTEM-SOURCE.md) | 提供给其他 Agent 的单文件概览 |
 | [Acceptance Tests](tests/ACCEPTANCE-TESTS.md) | 手动测试场景、预期行为和证据要求 |
 | [Test Results](tests/TEST-RESULTS.md) | 官方仓库当前测试记录 |
+| [Operating Model Design Draft](docs/design/OPERATING-MODEL-DRAFT.md) | QD、Checkpoint、Review 的当前设计决定与待讨论问题 |
 
 ## 项目状态与贡献
 
@@ -182,13 +197,16 @@ Council Sources V0.2 是一个 **Markdown 规范与仓库原型**，并不是经
 
 | 项目 | 当前证据 |
 | --- | --- |
-| **System Bootstrap (T1)** | **部分通过（Skill v0.2.0）：** 测试仓库中创建并回读了预期的 13 个文件。但测试使用了熟悉设计的持续对话，因此尚未验证全新上下文下的独立初始化；该结果也不能证明当前 Skill v0.2.3 已通过。 |
+| **System Bootstrap (T1)** | **部分通过（Skill v0.2.0）：** 测试仓库中创建并回读了预期的 13 个文件。但测试使用了熟悉设计的持续对话，因此尚未验证全新上下文下的独立初始化；该结果也不能证明当前 Skill v0.3.0 已通过。 |
 | **Source Consumption (T2)** | 未执行：尚未在独立上下文中验证 GitHub、粘贴 Markdown 和本地文件三种输入方式。 |
 | **Council Formation (T3)** | 未执行：尚无真实的 Project-to-Council 验收记录。 |
 | **Memory Maintenance (T4)** | 未执行：尚未在受控更新测试中验证记忆审批等级。 |
 | **Portable Source (T5)** | 未执行：尚未验证全新上下文能否正确理解导出内容。 |
-| **GitHub Sync (T6)** | **部分通过（Skill v0.2.0 测试）：** 已在测试仓库验证远程文件创建和回读；完整的更新、导出、重新导入流程仍未测试。当前 Skill v0.2.3 尚未通过该测试验证。 |
+| **GitHub Sync (T6)** | **部分通过（Skill v0.2.0 测试）：** 已在测试仓库验证远程文件创建和回读；完整的更新、导出、重新导入流程仍未测试。当前 Skill v0.3.0 尚未通过该测试验证。 |
 | **Guided Interaction (T7)** | 未执行：五种标记的行为需要真实的多轮对话测试。 |
+| **QD (T8)** | 未执行：尚未进行自适应、有限度的问题驱动协作测试。 |
+| **Checkpoint (T9)** | 未执行：尚未进行有证据的进度跟踪和暂停/恢复测试。 |
+| **Review (T10)** | 未执行：尚未进行结果评价、验证和交付测试。 |
 
 **测试记录说明：** 官方仓库的 [tests/TEST-RESULTS.md](tests/TEST-RESULTS.md) 当前将 T1–T7 全部列为 `Not Run`，而独立测试仓库对 Skill v0.2.0 的 T1 和 T6 记录为 `Partial`。这些记录尚未完成对齐。外部结果只能视为历史阶段性证据，不能视为当前版本验收通过。
 

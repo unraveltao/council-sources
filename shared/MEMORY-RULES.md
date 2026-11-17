@@ -71,3 +71,16 @@ Do not turn a proposal into a confirmed rule. Do not treat an old memory as a pe
 The canonical Council Sources repository may be public. Do not place private personal data, credentials, private chat transcripts, confidential work, or unlicensed third-party material in public memory or exports. Use a private repository or sanitized summary for sensitive records.
 
 A Source export is a dated snapshot. It must include its Council/system identity, version, export date, source-file manifest, and known omissions. It does not update itself when GitHub changes.
+
+
+## 7. Checkpoints, Review, and persistent memory
+
+Checkpoint and Council Memory serve different purposes.
+
+- **Checkpoint** records the working state of a task or milestone: current stage, completed work, work in progress, remaining questions/tasks, blockers, and next step.
+- **Council Memory** preserves durable organizational context: stable goals, confirmed decisions, responsibilities, working agreements, and verified progress that remains useful beyond the current task.
+- **Review** evaluates the outcome and may identify information worth preserving in Council Memory or another authoritative record.
+
+A Checkpoint does not automatically authorize a write to `MEMORY.md`. Keep ordinary progress checkpoints in the active working context by default. Persist them only when a durable record is useful, in an appropriate existing task/progress file and within the authorized scope. Do not create a new file for every small checkpoint.
+
+During Review, propose memory changes when appropriate. Apply them only under the three update levels above, preserving evidence, provenance, and history. Do not copy a full conversation or Project artifact into Council Memory merely because it appeared in a Checkpoint or Review.

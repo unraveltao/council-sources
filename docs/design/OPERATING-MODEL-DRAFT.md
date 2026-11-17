@@ -1,7 +1,7 @@
 # Council Operating Model — Design Draft
 
 > Status: Discussion draft / Stage checkpoint  
-> Scope: Consolidates the operating-model decisions discussed so far. It is not yet an approved normative specification and does not change Council Designer behavior.  
+> Scope: Records the current operating-model decisions. Council Designer v0.3.0 now uses QD, Checkpoint, and Review as default collaboration methods where relevant. This does not by itself establish mandatory adoption by every independent Council. Live behavior acceptance remains pending.  
 > Language: English, following the repository documentation policy.
 
 ## 1. Purpose
@@ -238,12 +238,12 @@ The following points reflect the discussion so far:
 These items are intentionally not finalized in this draft:
 
 - Whether the three methods are globally mandatory defaults, globally defined methods with Council-level configuration, or loaded through another mechanism.
-- The exact relationship between the methods, the Council Designer Skill, and individual Council files.
+- Whether every independent Council must adopt the methods by default, or whether each Council configures their use. Council Designer's default use is defined in SKILL.md v0.3.0.
 - Whether Checkpoint current state and history should live in one file or use another storage pattern.
 - The final placement and naming of the operating guide, memory rules, and Council template.
 - The exact default question budget and the point at which a discussion stage is considered complete.
 - The final relationship between this operating model and the existing Core Principles and System Architecture documents.
-- The acceptance scenarios and evidence needed to validate the methods in real Agent interactions.
+- The acceptance scenarios and evidence needed to validate the methods in real Agent interactions. T8–T10 now define the manual QD, Checkpoint, and Review behavior tests; none is marked Passed until executed.
 
 ## 11. Status and next step
 

@@ -7,7 +7,7 @@ This document tells authorized AI Agents how to **read, maintain, validate, and 
 1. The entry Skill is [skills/council-designer/SKILL.md](skills/council-designer/SKILL.md). It defines the operational modes and complete **System Bootstrap Contract**. The Skill must be sufficient to generate the system from scratch without preexisting companion files.
 2. This AGENTS.md governs repository maintenance, safety, authorization, and validation. It does not run the daily work of individual Councils.
 3. [README.md](README.md) explains the system to people and Agents. It is an introduction, not an independent source of new operational powers.
-4. [core principles](core/PRINCIPLES.md), [memory rules](shared/MEMORY-RULES.md), [Council templates](references/COUNCIL-TEMPLATE.md), and [exports](exports/README.md) contain readable specifications and generated snapshots. If these disagree with the Skill, report the inconsistency and reconcile it with user authority; do not silently override one document.
+4. [core principles](core/PRINCIPLES.md), [system architecture](core/SYSTEM-ARCHITECTURE.md), [memory rules](shared/MEMORY-RULES.md), [Council templates](references/COUNCIL-TEMPLATE.md), and [exports](exports/README.md) contain readable specifications and generated snapshots. [The operating-model design draft](docs/design/OPERATING-MODEL-DRAFT.md) records the current discussion and unresolved system-wide decisions. The Skill defines Council Designer's current behavior. If these disagree, report the inconsistency and reconcile it with user authority; do not silently override one document.
 5. Each Council owns its independent `COUNCIL.md`, `MEMORY.md`, and optional decision/task files. One GitHub repository does not imply one shared management hierarchy.
 
 ## 2. Read before acting
@@ -44,7 +44,7 @@ The single SKILL.md is the authoritative **specification for rebuilding Council 
 4. Design responsibilities before assigning executors. One Agent may hold several roles. Do not claim multiple independent Agents exist unless observed.
 5. Present the relevant mission, scope, roles, boundaries, and acceptance conditions. Obtain user approval before creating the Council.
 6. Use `councils/<slug>/COUNCIL.md` and `MEMORY.md` as the minimal files; add other records only for real needs.
-7. Update Registry. Do not change another Council's status, roles, decisions, or memory without scoped authorization.
+7. Update Registry with separate Lifecycle Status and Acceptance Status fields. Lifecycle records whether the Council is Proposed, Draft, Active, Paused, or Archived; acceptance records Not Defined, Not Run, Partial, Passed, Failed, or Blocked. Active does not mean Passed. Do not mark acceptance Passed without evidence in a test record. Do not change another Council's status, roles, decisions, or memory without scoped authorization.
 8. Cross-Council collaboration must explicitly identify its purpose, shared information, and write boundaries.
 
 ## 4A. Mandatory guided-interaction visibility
@@ -83,11 +83,15 @@ Accept:
 Do not claim to have read inaccessible sources. Reading a Source does not authorize editing it.
 
 For exports:
-1. Read current authoritative system/Council files.
-2. Include identity, version, export date, source-file manifest, current confirmed state, permissions and relevant unknowns.
-3. Sanitize confidential data and document omissions.
-4. Ensure the recipient can understand the Source without hidden chat context.
-5. Label exports as **snapshots**. A GitHub change does not automatically update an already imported GPT Add Sources document.
+1. Identify the recipient and choose System, one Council, or optional Combined scope.
+2. Read the authoritative files from one known source revision where possible.
+3. Produce one self-contained Markdown file per intended context by default. Do not combine unrelated Councils.
+4. Include export type, target, export version, date, source repository/ref/commit, exact source manifest, omissions, and privacy review.
+5. Preserve the distinction between confirmed facts, proposals, inferences, unknowns, and current status.
+6. Do not copy whole Project documentation or unrelated Council memory.
+7. Treat exports as generated derivatives. Update authoritative files first, then regenerate and read back the export.
+8. The current export process is Agent-assisted/manual; do not claim an automatic generator exists.
+9. Label exports as **snapshots**. A GitHub change does not automatically update an already imported GPT Add Sources document.
 
 ## 7. GitHub operations, privacy and conflict handling
 
@@ -107,10 +111,11 @@ Check as appropriate:
 - README Markdown links and internal navigation resolve.
 - README, AGENTS, Skill and other normative files do not contradict one another.
 - `README.md` is English and `README.zh-CN.md` is its synchronized Simplified Chinese counterpart; all other official Markdown and generated bootstrap files use English.
-- Registry entries correspond to actual Council directories, with no fabricated Councils.
-- Memory updates respect evidence and approval levels.
+- Registry entries correspond to actual Council proposals/directories and maintain separate, valid Lifecycle Status and Acceptance Status values.
+- Memory updates respect evidence and approval levels; Checkpoints are not automatically persistent memory updates.
+- QD, Checkpoint, and Review are applied according to the Skill and relevant task needs; their live behavior requires T8–T10.
 - No Council data or permissions are silently mixed.
-- Portable Sources identify versions, source files, known limitations and privacy decisions.
+- Portable Sources use the one-file-per-target default and identify export type, version, source revision, exact source files, omissions, known limitations, and privacy review.
 - GitHub commits are real and their contents were read back.
 
 Separate **static file/structure checks** from **real Agent behavior**, **fresh-context portability**, **memory authorization tests**, and **actual GitHub synchronization**. Record unexecuted tests as Not Run or Pending.

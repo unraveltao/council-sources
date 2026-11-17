@@ -1,25 +1,41 @@
 # Council Registry
 
-This file is a lightweight directory of Councils. It is not a central memory store or a command hierarchy.
+This file is a lightweight index of real Council instances. It records where each Council lives and its current lifecycle and acceptance states. It is not a central memory store, task tracker, or command hierarchy.
 
-Create an entry only after a real Council has been designed and its directory exists. Do not register examples or unfinished ideas as active Councils.
+| Council | Type / Scope | Related Project or Domain | Directory | Lifecycle Status | Acceptance Status | Last Reviewed |
+| --- | --- | --- | --- | --- | --- | --- |
+| Personal Learning Council | Domain / Education | Unravel Language + AI Engineering | `councils/personal-learning/` | Active | Not Run | 2026-11-17 |
 
-| Council | Type / Scope | Related Project or Domain | Directory | Status | Last reviewed |
-| --- | --- | --- | --- | --- | --- |
-| Personal Learning Council | Domain / Education | Unravel Language + AI Engineering | `councils/personal-learning/` | Active — initial formation; acceptance pending | 2026-11-17 |
+## Lifecycle status
 
-## Status values
+Lifecycle describes whether the Council exists and is currently operating. It is independent of acceptance status.
 
-- **Proposed** — discussed but not yet approved.
-- **Draft** — approved for creation; files are being prepared.
-- **Active** — created and in use.
-- **Paused** — intentionally not operating now.
-- **Archived** — retained for history; no longer active.
+- **Proposed** — a concrete Council proposal has been discussed and is awaiting the user's decision to create it. Do not register speculative ideas.
+- **Draft** — creation has been authorized and the initial Council files are being prepared or reviewed.
+- **Active** — the Council exists and is in use. Active does not mean that it has passed acceptance.
+- **Paused** — the Council exists but is intentionally not operating for now.
+- **Archived** — the Council is retained for reference but is no longer active.
+
+## Acceptance status
+
+Acceptance describes the latest evidence-backed validation state of the Council's defined acceptance criteria.
+
+- **Not Defined** — no observable acceptance criteria have been established.
+- **Not Run** — criteria exist, but no acceptance run has been performed.
+- **Partial** — some checks have been performed, but the full acceptance scope is incomplete.
+- **Passed** — all required acceptance criteria for the recorded scope and version have passed with evidence.
+- **Failed** — at least one required criterion failed in the latest relevant run.
+- **Blocked** — acceptance cannot proceed because a required input, tool, permission, or environment is unavailable.
+
+Do not infer acceptance status from lifecycle status. A Council may be Active while acceptance is Not Run, Partial, or Failed. A Passed result applies only to the tested scope/version and must be supported by a test record.
 
 ## Registry rules
 
-1. Use a stable, lowercase slug for each Council directory.
-2. Check for duplicates before creating a new Council.
-3. Keep each Council's details and memory in its own directory.
-4. Update this index when a Council is created, renamed, paused, resumed, or archived.
-5. Do not change another Council's status or ownership without authorization.
+1. Register only a concrete Council proposal that the user has explicitly approved for design/creation; do not register casual ideas, examples, or unapproved suggestions.
+2. Use a stable, lowercase slug for each Council directory. For Proposed entries, the directory may be the intended path; create it only after creation is authorized.
+3. Keep the Council's mission, roles, memory, decisions, and tasks in its own directory. Do not copy those details into this index.
+4. Maintain Lifecycle Status and Acceptance Status as separate fields. Use only the values defined above.
+5. Update the entry when a Council is created, activated, paused, resumed, archived, or when its acceptance evidence changes.
+6. Update Last Reviewed when the entry is materially changed or its state is checked.
+7. Never mark acceptance Passed based only on file existence, documentation, or an unexecuted test plan.
+8. Do not change another Council's status or ownership without authorization.

@@ -1,10 +1,10 @@
 ---
 name: council-designer
-version: 0.2.3
+version: 0.3.0
 description: Bootstrap and maintain the Council Sources system; consume portable Council Sources; form independent Councils for existing projects or domains; maintain memory and export or sync Sources.
 ---
 
-# Council Designer — V0.2.3
+# Council Designer — V0.3.0
 
 ## 0. Identity: what this Skill is for
 
@@ -110,6 +110,68 @@ The live T7 acceptance test MUST inspect consecutive turns including ambiguous i
 
 A missing or semantically incorrect required marker (including a missing **➜** recommendation on a qualifying choice turn, the reappearance of **💡** as a recommendation marker, or the old **🟢 ➜** form) is a **Failed** behavioral test, even when the rest of the answer is factually correct. Static document inspection never counts as a passed behavioral test.
 
+## 1B. Shared Atomic Methods
+
+Council Designer uses three compact, reusable collaboration methods when they fit the task. They are working methods, not separate Agents, tools, services, or mandatory stages. Do not create a large catalogue of methods when these three can solve the recurring problem.
+
+### QD — Question-driven collaboration
+
+QD is the central interaction method. It uses questions to drive understanding and progress throughout the work, not only during initial requirements gathering.
+
+- Reuse known context and identify the uncertainty that materially affects the next decision.
+- Ask focused questions and adapt to the user's answers. Prefer one central question at a time; combine closely related, low-effort questions only when that reduces friction.
+- Explain the Agent's current interpretation so the user can correct or confirm it.
+- Preserve mixed answers, additional constraints, and freeform directions.
+- For a structured multi-stage discussion, state the stage objective and a reasonable estimate of the key questions or decisions likely to be needed.
+- Treat the estimate as a planning aid, never as a quota. Stop early when enough shared understanding exists.
+- Record non-blocking unknowns instead of asking indefinitely. Resume QD later if new uncertainty appears.
+- Do not force QD for a simple, sufficiently clear request.
+
+### Checkpoint — progress and milestone tracking
+
+Checkpoint makes the current state visible to the user and the Agent.
+
+Use it at meaningful boundaries: after a discussion stage or important group of questions, at a task/milestone boundary, when a significant change occurs, before a pause/resume, or when the user asks for progress.
+
+A useful Checkpoint records the fields relevant to the task:
+
+- Current task and stage.
+- Completed work and resolved questions, supported by evidence.
+- Work in progress.
+- Remaining tasks and unresolved questions.
+- Blockers, dependencies, and risks.
+- Next intended step.
+
+Task-level and milestone-level Checkpoints use the same method at different granularity. Do not create a Checkpoint after every ordinary message, invent progress percentages, or mark planned work complete.
+
+A Checkpoint is a progress record, not automatically a permanent Council Memory update. Keep it in the current working context by default. Write it to an existing task/progress record only when durable storage is useful and the destination is authorized; do not create a new file for every small update.
+
+### Review — reflection, validation, and delivery
+
+Use Review when a task or meaningful milestone reaches an endpoint, the user asks for a review, or a significant event requires explicit evaluation.
+
+Review should:
+
+1. Recall the original goal, constraints, and decisions.
+2. Compare actual results with the intended outcome.
+3. Verify claims against available tests, artifacts, or other evidence.
+4. Distinguish completed, partial, blocked, failed, and untested work.
+5. Summarize decisions, lessons, unresolved items, and risks.
+6. Produce the requested deliverable or state clearly what remains.
+7. Identify possible Memory or documentation updates, subject to the applicable approval rules.
+
+Review is not merely a transcript summary. Never claim a test passed unless it was actually run and its evidence was checked.
+
+### Relationship and usage
+
+- **QD drives the work through questions and shared understanding.**
+- **Checkpoint shows where the work stands and what remains.**
+- **Review evaluates what was accomplished, verifies it where appropriate, and closes with a summary or deliverable.**
+
+QD may recur throughout the task. Checkpoints may occur more than once. Review is commonly used at the end, but may also be used for a significant milestone. This is a flexible relationship, not a mandatory linear sequence; simple tasks may need none, one, or only part of the method set.
+
+Council Designer uses these methods as its default collaboration approach where relevant. A Council may add domain-specific workflows, but do not silently redefine the shared method meanings. Whether every independently created Council must adopt all three methods remains a system-level design decision and must not be presented as settled without approval.
+
 ## 2. Entry routing
 
 Infer the user's intent from natural language. Do not require special commands.
@@ -177,7 +239,8 @@ Default canonical repository for this project is https://github.com/unraveltao/c
     │   └── councils.md
     ├── exports/
     │   ├── README.md
-    │   └── COUNCIL-SYSTEM-SOURCE.md
+    │   ├── COUNCIL-SYSTEM-SOURCE.md
+    │   └── <slug>/                 # optional per-Council exports
     └── tests/
         ├── ACCEPTANCE-TESTS.md
         └── TEST-RESULTS.md
@@ -235,19 +298,19 @@ Must include mission, scope, outcomes, responsibilities/roles, executor mapping,
 Must explain that each real Council receives its own subdirectory, with its own COUNCIL.md and MEMORY.md at minimum. Additional DECISIONS.md, TASKS.md, ISSUES.md, and workflows/ are added only when useful.
 
 **registry/councils.md**
-Must be a lightweight index of Council name, scope, directory, related project/domain, and status. It must not become a copy of every Council's memory.
+Must be a lightweight index of Council name, type/scope, related project/domain, directory, Lifecycle Status, Acceptance Status, and last-reviewed date. Lifecycle and acceptance are independent dimensions. Define their allowed values; do not imply that Active means Passed. It must not become a copy of every Council's memory.
 
 **exports/README.md**
-Must explain export metadata, source files, version, date, privacy checks, and manual re-import of GPT Add Sources.
+Must define the one-self-contained-Markdown-file-per-target default; System, individual Council, and optional Combined export profiles; naming/storage; required metadata and exact source manifest; privacy review; source-of-truth rules; read-back validation; and manual re-import of GPT Add Sources. State that export generation is currently Agent-assisted/manual unless a real generator is implemented.
 
 **exports/COUNCIL-SYSTEM-SOURCE.md**
-Must be a portable, self-contained overview for GPT or other Agents. Include identity, purpose, concepts, core principles, architecture, operating modes, memory levels, permissions, source usage, export/sync limitations, and current status. It is a knowledge package for understanding and discussion; it does not grant tool permissions.
+Must be a portable, self-contained System export for GPT or other Agents. Include identity, purpose, concepts, core principles, architecture, the QD/Checkpoint/Review methods and their adoption status, Registry lifecycle/acceptance distinction, operating modes, memory levels, permissions, source usage, export/sync limitations, current status, and a source manifest. It is a knowledge snapshot for understanding and discussion; it does not grant tool permissions.
 
 **tests/ACCEPTANCE-TESTS.md**
-Must define repeatable manual tests for bootstrap, Source consumption, Council formation, memory update, export/re-import, and GitHub sync. Include preconditions, steps, expected results, and evidence to capture.
+Must define repeatable manual tests for bootstrap, Source consumption, Council formation/Registry lifecycle, memory updates, Checkpoint-memory separation, export/re-import, GitHub sync, guided interaction, QD, Checkpoint, and Review. Include preconditions, steps, expected results, and evidence to capture.
 
 **tests/TEST-RESULTS.md**
-Must be a factual log. Initialize as Not Run / Pending. Only mark a test passed after it has actually been performed and verified.
+Must be a factual log whose test IDs match ACCEPTANCE-TESTS.md. Initialize unexecuted tests as Not Run. Separate static documentation checks from live behavior tests. Only mark a test Passed after it has actually been performed and verified with evidence.
 
 ### 3.5 Bootstrap safety and write behavior
 
@@ -318,7 +381,7 @@ After presenting the design and receiving confirmation:
 1. Create councils/<slug>/COUNCIL.md and MEMORY.md.
 2. Add DECISIONS.md, TASKS.md, ISSUES.md, or workflows/ only if useful.
 3. Record the Project URL/path and the location of its authoritative documents.
-4. Update registry/councils.md.
+4. Update registry/councils.md with the Council's Lifecycle Status and Acceptance Status as separate fields. Use only the defined values; do not mark acceptance Passed without recorded evidence.
 5. Check that no other Council's files were modified.
 6. Report created paths and any remaining user decisions.
 
@@ -338,19 +401,49 @@ Default behavior: create the Council inside the Council Sources repository, not 
 
 ## 7. Export — portable Source for GPT and other Agents
 
-An export should be readable without requiring the recipient to browse the repository.
+An export is a generated, self-contained Markdown snapshot for a specific recipient and purpose. The modular repository files remain authoritative.
 
-For a system-wide export, generate exports/COUNCIL-SYSTEM-SOURCE.md from the current README, core principles/architecture, memory rules, and relevant operating rules.
+### 7.1 Choose one export profile
 
-For a single Council, generate exports/<slug>-SOURCE.md containing:
-- Council identity, mission, scope, and responsibilities.
-- Current confirmed state and relevant memory.
-- Decision and task summaries where needed.
-- Project references and authoritative source locations.
-- Permissions, collaboration boundaries, and unresolved questions.
-- Version/date/source-file manifest.
+- **System:** the framework and its operating boundaries → `exports/COUNCIL-SYSTEM-SOURCE.md`.
+- **Council:** one selected Council → `exports/<slug>/<COUNCIL-NAME>-COUNCIL-SOURCE.md`.
+- **Combined (optional):** system context plus one selected Council in one file → `exports/<slug>/<COUNCIL-NAME>-FULL-SOURCE.md`.
 
-Before export, check for private information and disclose omitted material. A portable Source is a snapshot, not an automatically synchronized live database and not a grant of execution permissions.
+Default to one Markdown file per intended context. Do not combine all Councils by default. Do not split a target into many files merely to mirror the repository structure. Split only for a real size, privacy, or access boundary; if split, include a concise index. Never invent platform limits.
+
+### 7.2 Read authoritative sources
+
+1. Identify the recipient, purpose, and export profile.
+2. Read the current authoritative files from one known branch/commit where possible.
+3. For a System export, use the README, Skill, Core Principles, System Architecture, Memory Rules, Registry schema, Export Guide, relevant design status, and current test status.
+4. For a Council export, use that Council's COUNCIL.md, MEMORY.md, and only relevant decision/task/issue records, plus the necessary shared principles and operating rules.
+5. For Combined, include the relevant System context and exactly the selected Council. Do not include unrelated Council memories.
+6. Resolve or disclose contradictions. Do not silently convert proposals or unknowns into confirmed facts.
+
+### 7.3 Build the self-contained file
+
+Include the minimum sufficient content for the recipient to understand the target without hidden conversation context or mandatory browsing. Canonical repository links may be provided as provenance, but essential rules and current state must be present in the file itself.
+
+Every export must include:
+- Export type and target.
+- Export artifact version and generation date.
+- Source repository and source ref.
+- Exact source commit SHA when available; otherwise state that it is unavailable.
+- A manifest of the authoritative file paths actually read and used.
+- Relevant omissions and known limitations.
+- A privacy-review statement.
+
+Preserve the difference between confirmed facts, proposals, inferences, unknowns, active work, and completed work. Keep System rules distinct from Council-specific facts.
+
+### 7.4 Privacy, write, and synchronization rules
+
+- Review for credentials, secrets, private personal data, private chat transcripts, confidential project information, and third-party material without publication rights.
+- Public exports must be public-safe. Sanitize or omit private information; never assume a public repository is a private memory store.
+- The current process is Agent-assisted/manual; do not claim an export generator or automatic delivery exists.
+- Write to the export path only when authorized. After writing, read the file back and verify its content against the manifest.
+- Treat the export as a generated derivative. Change authoritative source files first, then regenerate the export.
+- A GitHub push does not refresh an already imported GPT Add Sources file. Explain the manual re-import/replacement step unless a specific integration has been verified.
+- A Markdown Source does not grant local file, network, GitHub, or execution permissions.
 
 ## 8. Sync — GitHub and imported knowledge sources
 
@@ -365,14 +458,14 @@ Before export, check for private information and disclose omitted material. A po
 
 ## 9. Review and Test
 
-Use tests/ACCEPTANCE-TESTS.md as the manual acceptance plan. Distinguish:
+Use tests/ACCEPTANCE-TESTS.md as the manual acceptance plan. It includes T1–T7 for system workflows and guided interaction, plus T8 QD, T9 Checkpoint, and T10 Review. Distinguish:
 - **File check:** expected files exist and are readable.
-- **Structure check:** links, paths, registry, and exports are consistent.
-- **Behavior test:** an Agent actually performs the workflow with realistic inputs.
+- **Structure check:** links, paths, Registry lifecycle/acceptance fields, and exports are consistent.
+- **Behavior test:** an Agent actually performs QD, Checkpoint, Review, memory, and other workflows with realistic inputs.
 - **Cross-environment test:** a separate Agent/GPT consumes the exported Source and correctly understands it.
 - **Sync test:** a real authorized remote change is verified by reading it back.
 
-Do not mark a behavior test passed based only on reading the instructions or generating files.
+Do not mark a behavior test passed based only on reading instructions, updating the Skill, or generating files.
 
 ## 10. Completion report
 

@@ -8,7 +8,7 @@ Council Sources is the Markdown-first home for defining, maintaining, and sharin
 
 A Council can start with a minimal structure and grow as the user's projects and needs evolve. A single GPT conversation may handle a simple task; more complex work can involve multiple role perspectives, separate GPT Workers, or execution tools such as Codex. The human remains the organization lead and retains final decision authority.
 
-> **Project status:** V0.2 prototype. Acceptance testing is incomplete. Council Designer is currently version 0.2.3. See [Project Status](#project-status--contributing) and the [test records](tests/TEST-RESULTS.md).
+> **Project status:** V0.2 prototype. Acceptance testing is incomplete. Council Designer is currently version 0.3.0. See [Project Status](#project-status--contributing) and the [test records](tests/TEST-RESULTS.md).
 
 ## Why Council?
 
@@ -68,6 +68,20 @@ A typical collaboration loop is:
 **User goal → clarify and plan → allocate responsibilities as needed → review and consolidate results → user decides → authorized work is executed → verified outcomes are recorded.**
 
 This may happen in one conversation or across multiple tools and conversations. Do not claim that separate Agents communicated or executed work unless that actually happened.
+
+## Shared collaboration methods
+
+Council Designer v0.3.0 uses three compact methods where they are useful:
+
+| Method | Responsibility |
+| --- | --- |
+| **QD** | Drives the work through questions and shared understanding. |
+| **Checkpoint** | Records the current stage, completed work, remaining questions/tasks, blockers, and next step. |
+| **Review** | Evaluates results, checks evidence, summarizes lessons, and prepares the requested delivery. |
+
+QD may recur throughout a task; Checkpoints occur at meaningful progress boundaries; Review is commonly used at task or milestone completion. They are flexible methods, not three mandatory stages. Universal adoption by every independent Council remains a design decision.
+
+See the [Operating Model Design Draft](docs/design/OPERATING-MODEL-DRAFT.md) and the [Council Designer Skill](skills/council-designer/SKILL.md).
 
 ## Core concepts
 
@@ -164,11 +178,12 @@ GitHub can serve as versioned storage when the host has the required tools and t
 | [Memory Rules](shared/MEMORY-RULES.md) | Memory ownership, approval levels, evidence, conflicts, and privacy |
 | [Council Template](references/COUNCIL-TEMPLATE.md) | Starting structure for an individual Council |
 | [Council Directory Guide](councils/README.md) | Required and optional files for each Council |
-| [Council Registry](registry/councils.md) | Which Councils actually exist and their current status |
-| [Export Guide](exports/README.md) | Creating and reviewing portable snapshots |
+| [Council Registry](registry/councils.md) | Council index with separate lifecycle and acceptance states |
+| [Export Guide](exports/README.md) | One-file-per-target export profiles, metadata, manifests, and review |
 | [Portable System Source](exports/COUNCIL-SYSTEM-SOURCE.md) | A single-document overview for another Agent |
 | [Acceptance Tests](tests/ACCEPTANCE-TESTS.md) | Manual scenarios, expected behavior, and evidence requirements |
 | [Test Results](tests/TEST-RESULTS.md) | The canonical repository's current test ledger |
+| [Operating Model Design Draft](docs/design/OPERATING-MODEL-DRAFT.md) | Current QD, Checkpoint, and Review design decisions and open questions |
 
 ## Project status & contributing
 
@@ -180,13 +195,16 @@ The separate [Council Sources test log](https://github.com/unraveltao/council-so
 
 | Area | Current evidence |
 | --- | --- |
-| **System Bootstrap (T1)** | **Partial (Skill v0.2.0):** 13 of 13 expected files were created and read back in the test repository. The run used an ongoing conversation familiar with the design, so independent fresh-context bootstrap remains unverified. This does not validate the current Skill v0.2.3. |
+| **System Bootstrap (T1)** | **Partial (Skill v0.2.0):** 13 of 13 expected files were created and read back in the test repository. The run used an ongoing conversation familiar with the design, so independent fresh-context bootstrap remains unverified. This does not validate the current Skill v0.3.0. |
 | **Source Consumption (T2)** | Not Run — GitHub, pasted Markdown, and local-file behavior has not been validated across separate input contexts. |
 | **Council Formation (T3)** | Not Run — no real Project-to-Council acceptance run is recorded. |
 | **Memory Maintenance (T4)** | Not Run — approval-level behavior has not been validated in a controlled update test. |
 | **Portable Source (T5)** | Not Run — fresh-context comprehension has not been established. |
 | **GitHub Sync (T6)** | **Partial (Skill v0.2.0 test run):** remote file creation and readback were verified in the test repository; a complete update/export/re-import workflow remains untested. Current Skill v0.2.3 has not been validated by this run. |
 | **Guided Interaction (T7)** | Not Run — the five-marker behavior requires a live multi-turn test. |
+| **QD (T8)** | Not Run — adaptive, bounded, question-driven collaboration has not been tested live. |
+| **Checkpoint (T9)** | Not Run — evidence-backed progress tracking and pause/resume have not been tested live. |
+| **Review (T10)** | Not Run — outcome evaluation, verification, and delivery have not been tested live. |
 
 **Test-log note:** The canonical [tests/TEST-RESULTS.md](tests/TEST-RESULTS.md) currently lists T1–T7 as `Not Run`, while the separate test repository records T1 and T6 as `Partial` against Skill v0.2.0. These records have not yet been reconciled. Treat the external results as historical partial evidence, not current-version acceptance.
 
