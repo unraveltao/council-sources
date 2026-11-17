@@ -20,7 +20,7 @@ The Skill requires no custom scripts, database, or background service. It uses M
 
 ### Repository language policy
 
-**All formal files generated or maintained inside Council Sources repositories must be written in English**: README, AGENTS, SKILL, core rules, memory rules, Council templates and records, registry, exports, and tests. This convention also applies to fresh bootstrap/test repositories. The Agent may communicate with the user in their preferred language; that does not change the language of committed documentation. If existing files use another language, preserve content and history while translating with the user's authorization.
+**All formal files generated or maintained inside Council Sources repositories must be written in English, except for the README pair.** `README.md` is the English primary version; `README.zh-CN.md` is its Simplified Chinese counterpart. Keep both README files aligned in structure and meaning, including capabilities, permissions, limitations, examples, and validation status. Every other formal file—including AGENTS, SKILL, core rules, memory rules, Council templates and records, registry, exports, and tests—must be English. Apply the same policy to fresh bootstrap/test repositories. The Agent may communicate with the user in their preferred language; conversation language does not change the language of other committed documentation.
 
 ### Bootstrap contract versus literal template
 
@@ -187,7 +187,7 @@ A Council directory is created only when a real Council is formed. Do not create
 
 The following requirements are sufficient to reconstruct the companion files from this SKILL.md alone.
 
-**README.md — human and Agent guide**
+**README.md — English human and Agent guide**
 Must explain:
 - What Council Sources is and what problem it solves.
 - Council, Project, Role, Agent, and Source distinctions.
@@ -198,6 +198,9 @@ Must explain:
 - How to maintain memory, export, and sync.
 - Repository navigation, limitations, public-repository privacy, and current validation status.
 Keep it instructional and navigable; link to every companion file.
+
+**README.zh-CN.md — Simplified Chinese README counterpart**
+Must provide a complete Simplified Chinese version of README.md. Keep its section structure, capabilities, permissions, limitations, examples, links, and validation status semantically aligned with the English primary version. Include reciprocal language-switch links. Do not translate other repository documents by default.
 
 **AGENTS.md — repository operating rules**
 Must instruct repository Agents to:
