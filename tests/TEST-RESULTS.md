@@ -29,3 +29,22 @@ No v0.3.0 documentation validation has been recorded yet. Add the exact files re
 ## Run log
 
 No live functional acceptance test for Council Designer v0.3.0 has been recorded.
+
+
+## Static documentation validation — 2026-11-17
+
+> Status: Passed (static documentation/structure checks only)  
+> Validated source commit: 53d94fb9dadec39330abf8bdfce017c194ab776a
+
+Checks performed by reading the committed files back from the PR branch:
+
+- Confirmed the Registry has separate Lifecycle Status and Acceptance Status columns, the defined values, and the rule that Active does not imply Passed.
+- Confirmed Council Designer is version 0.3.0 and contains the QD, Checkpoint, and Review method definitions.
+- Confirmed the Skill and Export Guide specify one self-contained Markdown file per intended context by default, with source metadata and an exact source manifest.
+- Confirmed System and Personal Learning Council exports contain source manifests referencing the validated source revision.
+- Confirmed all source paths listed in the two export manifests exist in the repository tree.
+- Confirmed T1–T10 are defined in ACCEPTANCE-TESTS.md and all ten current-version test statuses remain Not Run.
+- Confirmed the English and Simplified Chinese README versions both reference Skill v0.3.0 and describe the three methods.
+- Checked relative Markdown links in README.md, README.zh-CN.md, AGENTS.md, core/SYSTEM-ARCHITECTURE.md, exports/README.md, and docs/design/OPERATING-MODEL-DRAFT.md; no missing targets were found.
+
+This static validation does **not** establish live Agent behavior, fresh-context export comprehension, memory approval behavior, or end-to-end GitHub/GPT synchronization. T1–T10 remain Not Run until their actual procedures are executed with evidence.
