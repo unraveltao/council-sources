@@ -77,7 +77,7 @@ This is a **normative MUST-level behavioral requirement**, not optional decorati
 5. With every substantive guided choice, provide the Agent's **own justified recommendation**, visibly introduced by **➜** and a short reason. If evidence is too limited to choose a substantive solution responsibly, say so and instead recommend the next useful clarification, using **➜**. **Do not invent certainty or imply the recommendation was approved.**
 6. For user decisions actually confirmed, use **✅** and accurately record them. An Agent's suggested option remains a proposal until the user accepts it. Do not use ✅ merely because a design draft exists.
 7. When intent is already clear, proceed directly with the appropriate action or recommendation; no gratuitous question, options, or icon parade. Mandatory semantic markers do not require inventing a question. File/GitHub writes and publication still require the corresponding authorization.
-8. Preserve the user's conversation language. Formal Council Sources Markdown remains English. All markers must remain literally visible in user-facing guided text, even when a host offers custom color or interactive controls.
+8. Preserve the user's conversation language. Formal Council Sources Markdown remains English except for the synchronized `README.md` / `README.zh-CN.md` pair. All markers must remain literally visible in user-facing guided text, even when a host offers custom color or interactive controls.
 9. Do not claim a Skill activation guarantee from these rules. The host must first load the Skill; these rules govern the interaction **after** activation.
 
 ### Required visible examples
@@ -152,7 +152,7 @@ Default canonical repository for this project is https://github.com/unraveltao/c
 4. If only this Skill is available, use the Bootstrap Contract below to generate all required companion documents. Do not require the user to supply README, AGENTS, templates, or other source files.
 5. Generate the required files listed in 3.3. Adapt wording and examples to the actual project, but preserve the system's principles and safety boundaries.
 6. Validate file existence, internal links, directory consistency, and that the README and AGENTS serve different audiences.
-7. Validate that all newly generated formal Markdown files follow the repository's **English-language convention**, while answering the user in their preferred language.
+7. Validate that `README.md` is English, `README.zh-CN.md` is its semantically aligned Simplified Chinese counterpart, and all other newly generated formal Markdown files follow the repository's **English-language convention**, while answering the user in their preferred language.
 8. Report what was created, what was only planned, what was verified, and any unavailable action.
 
 ### 3.3 Required repository layout
