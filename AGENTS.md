@@ -106,7 +106,7 @@ Check as appropriate:
 - Required files from the Skill's Bootstrap Contract exist.
 - README Markdown links and internal navigation resolve.
 - README, AGENTS, Skill and other normative files do not contradict one another.
-- Official repository Markdown and generated bootstrap files use English.
+- `README.md` is English and `README.zh-CN.md` is its synchronized Simplified Chinese counterpart; all other official Markdown and generated bootstrap files use English.
 - Registry entries correspond to actual Council directories, with no fabricated Councils.
 - Memory updates respect evidence and approval levels.
 - No Council data or permissions are silently mixed.
@@ -119,7 +119,8 @@ Separate **static file/structure checks** from **real Agent behavior**, **fresh-
 
 **README edits usually do not require a Skill change** when they only improve wording, layout, navigation, or examples of already-defined features.
 
-**Update SKILL.md and affected companion files** when a change modifies:
+**Keep both README language versions synchronized** whenever either README changes. Update `SKILL.md` and affected companion files when a change modifies:
+- The documentation language policy or README bilingual-pair contract.
 - Capabilities, routing, or required user inputs.
 - The bootstrap directory structure or required file contract.
 - Council behavior, permissions, memory levels, isolation, or synchronization.
