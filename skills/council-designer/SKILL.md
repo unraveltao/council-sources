@@ -159,6 +159,7 @@ Default canonical repository for this project is https://github.com/unraveltao/c
 
     council-sources/
     ├── README.md
+    ├── README.zh-CN.md
     ├── AGENTS.md
     ├── skills/
     │   └── council-designer/
