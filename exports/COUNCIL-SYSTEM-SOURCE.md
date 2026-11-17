@@ -6,7 +6,7 @@
 > Generated at: 2026-11-17  
 > Source repository: https://github.com/unraveltao/council-sources  
 > Source ref: docs/bilingual-readme-2026-11-17  
-> Source commit: 7b04b1f60571d60459409a73b1c359719427f8d4  
+> Source commit: 53d94fb9dadec39330abf8bdfce017c194ab776a  
 > Omissions: Individual Council memories, private notes, Project repositories/artifacts, and raw conversation transcripts are not included.  
 > Privacy review: Reviewed for credentials, secrets, private chat transcripts, and confidential material. This export is intended as a public-safe framework summary.  
 > This file is a knowledge snapshot. It does not grant file, network, GitHub, or execution permissions.
@@ -115,7 +115,7 @@ Council Designer uses these methods by default where relevant. Whether every ind
 Registry tracks two independent dimensions:
 
 **Lifecycle Status**
-- Proposed — concrete proposal awaiting the user's creation decision.
+- Proposed — a specific Council has been proposed for formal design/evaluation at the user's request; the creation decision is pending. Proposed does not authorize creation.
 - Draft — creation authorized; initial files are being prepared/reviewed.
 - Active — exists and is in use.
 - Paused — intentionally not operating now.
@@ -201,7 +201,7 @@ The current test ledger records these tests as Not Run for v0.3.0. Updating docu
 
 ## 11. Source manifest
 
-This snapshot was generated from the following authoritative files at source commit 7b04b1f60571d60459409a73b1c359719427f8d4:
+This snapshot was generated from the following authoritative files at source commit 53d94fb9dadec39330abf8bdfce017c194ab776a:
 
 | Source file | Purpose |
 | --- | --- |

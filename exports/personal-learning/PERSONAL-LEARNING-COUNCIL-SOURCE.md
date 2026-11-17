@@ -6,7 +6,7 @@
 > Generated at: 2026-11-17  
 > Source repository: https://github.com/unraveltao/council-sources  
 > Source ref: docs/bilingual-readme-2026-11-17  
-> Source commit: 7b04b1f60571d60459409a73b1c359719427f8d4  
+> Source commit: 53d94fb9dadec39330abf8bdfce017c194ab776a  
 > Lifecycle Status: Active  
 > Acceptance Status: Not Run  
 > Omissions: Project source code, full curricula, private learner notes, personal chat transcripts, and other Council records are not included.  
@@ -142,7 +142,7 @@ This Council export is a single self-contained Markdown file for the Personal Le
 
 ## 12. Source manifest
 
-This snapshot was generated from the following authoritative files at source commit 7b04b1f60571d60459409a73b1c359719427f8d4:
+This snapshot was generated from the following authoritative files at source commit 53d94fb9dadec39330abf8bdfce017c194ab776a:
 
 | Source file | Purpose |
 | --- | --- |
