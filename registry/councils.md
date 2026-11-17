@@ -10,7 +10,7 @@ This file is a lightweight index of real Council instances. It records where eac
 
 Lifecycle describes whether the Council exists and is currently operating. It is independent of acceptance status.
 
-- **Proposed** — a concrete Council proposal has been discussed and is awaiting the user's decision to create it. Do not register speculative ideas.
+- **Proposed** — a specific Council has been proposed for formal design/evaluation at the user's request; the decision to authorize creation is still pending. Do not register speculative ideas.
 - **Draft** — creation has been authorized and the initial Council files are being prepared or reviewed.
 - **Active** — the Council exists and is in use. Active does not mean that it has passed acceptance.
 - **Paused** — the Council exists but is intentionally not operating for now.
@@ -31,7 +31,7 @@ Do not infer acceptance status from lifecycle status. A Council may be Active wh
 
 ## Registry rules
 
-1. Register only a concrete Council proposal that the user has explicitly approved for design/creation; do not register casual ideas, examples, or unapproved suggestions.
+1. Register only a concrete Council proposal that the user has explicitly asked to design/evaluate. Proposed does not authorize creation; do not register casual ideas, examples, or unrequested suggestions.
 2. Use a stable, lowercase slug for each Council directory. For Proposed entries, the directory may be the intended path; create it only after creation is authorized.
 3. Keep the Council's mission, roles, memory, decisions, and tasks in its own directory. Do not copy those details into this index.
 4. Maintain Lifecycle Status and Acceptance Status as separate fields. Use only the values defined above.
