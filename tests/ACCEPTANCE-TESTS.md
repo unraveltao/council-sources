@@ -21,7 +21,7 @@ Record actual inputs, outputs, changed files, and evidence. A test is not Passed
 4. Check the generated registry schema and export instructions.
 
 **Expected:**
-- All required files and directories are created.
+- All required files and directories are created, including both required bootstrap test documents: `tests/ACCEPTANCE-TESTS.md` and `tests/TEST-RESULTS.md`. These are required outputs, not optional files.
 - README is English and `README.zh-CN.md` is its semantically aligned Simplified Chinese counterpart.
 - All other formal Markdown files are English.
 - Registry distinguishes Lifecycle Status from Acceptance Status.
