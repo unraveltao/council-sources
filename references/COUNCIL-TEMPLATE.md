@@ -33,7 +33,9 @@ Add specialist roles only when complexity, frequency, workload, expertise, or in
 
 ## 5. Working loop
 
-Receive goal → clarify the problem → allocate responsibilities as needed → execute → verify result → resolve issues when they arise → update relevant memory.
+QD drives the work through questions and shared understanding. Use Checkpoint at meaningful stages or milestones to record completed work, remaining questions/tasks, blockers, and the next step. Use Review when a task or milestone reaches an endpoint to evaluate results, verify evidence, summarize lessons, and identify deliverables.
+
+This is a flexible working model, not a mandatory sequence. Simple tasks should remain simple; do not invoke every method when it adds no value.
 
 ## 6. Decision and authorization
 
@@ -55,7 +57,7 @@ Link to authoritative project documents, repositories, task trackers, and delive
 
 ## 9. Memory
 
-At minimum, maintain a sibling MEMORY.md. Add DECISIONS.md, TASKS.md, ISSUES.md, or workflows/ only when they solve a real recurring need. Follow shared/MEMORY-RULES.md.
+At minimum, maintain a sibling MEMORY.md. Add DECISIONS.md, TASKS.md, ISSUES.md, or workflows/ only when they solve a real recurring need. Follow shared/MEMORY-RULES.md. A Checkpoint is not automatically a persistent memory update.
 
 ## 10. Acceptance
 
