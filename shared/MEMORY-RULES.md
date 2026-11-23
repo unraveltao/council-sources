@@ -1,5 +1,7 @@
 # Memory Rules — Council Sources V0.2
 
+> This is the [earlier Council Sources](../docs/COUNCIL-SOURCES-LEGACY.md) memory policy. V1.0 carries the approval levels in its own Skill and leaves storage to the user.
+
 ## 1. Ownership and separation
 
 - Every Council owns its own organizational memory under councils/<slug>/.

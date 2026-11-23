@@ -1,5 +1,7 @@
 # Council Operating Model — Design Draft
 
+> This historical draft informed Council Designer V0.3.0. See the [legacy guide](../COUNCIL-SOURCES-LEGACY.md) for its relationship to V1.0.
+
 > Status: Discussion draft / Stage checkpoint  
 > Scope: Records the current operating-model decisions. Council Designer v0.3.0 now uses QD, Checkpoint, and Review as default collaboration methods where relevant. This does not by itself establish mandatory adoption by every independent Council. Live behavior acceptance remains pending.  
 > Language: English, following the repository documentation policy.

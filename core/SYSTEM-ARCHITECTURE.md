@@ -1,5 +1,7 @@
 # Council Sources — System Architecture
 
+> This describes the [earlier Council Sources repository workflow](../docs/COUNCIL-SOURCES-LEGACY.md). Council Designer V1.0 is a standalone Skill with its own behavior specification.
+
 ## 1. Components
 
 ### Council Sources repository
@@ -8,7 +10,7 @@ The canonical, version-controlled home for system rules, templates, individual C
 
 ### Council Designer Skill
 
-The operational entry point for System Bootstrap, Source Consumption, Council Formation, Memory Maintenance, Export, Sync, and Review/Test. The Skill defines behavior and the bootstrap contract; companion documents explain, constrain, or provide generated knowledge.
+Council Designer V0.3.0 was the operational entry point for System Bootstrap, Source Consumption, Council Formation, Memory Maintenance, Export, Sync, and Review/Test. Its specification defines the earlier behavior and bootstrap contract. The companion documents describe that workflow.
 
 ### Individual Council
 

@@ -1,5 +1,7 @@
 # Council Sources — Manual Acceptance Tests
 
+> Historical V0.3.0 scenarios. Use the [pinned V0.3.0 Skill](https://github.com/unraveltao/council-sources/blob/302f74c3c756bd87d73b6b93720986782a97725f/skills/council-designer/SKILL.md) to reproduce them. V1.0 has a [separate plan](V1-ACCEPTANCE-TESTS.md).
+
 > Version: 0.3.0  
 > Test style: manual, evidence-based. No custom scripts or database are required.
 
@@ -11,7 +13,7 @@ Record actual inputs, outputs, changed files, and evidence. A test is not Passed
 
 **Preconditions:**
 - A clean temporary local directory or empty test repository.
-- The Agent receives only `skills/council-designer/SKILL.md` and the destination.
+- The Agent receives only the pinned V0.3.0 Skill above and the destination.
 - The Agent has the required file-write capability.
 
 **Steps:**
