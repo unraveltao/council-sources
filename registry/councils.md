@@ -1,5 +1,7 @@
 # Council Registry
 
+> This registry tracks records in the [earlier Council Sources format](../docs/COUNCIL-SOURCES-LEGACY.md). Council Designer V1.0 works without a registry.
+
 This file is a lightweight index of real Council instances. It records where each Council lives and its current lifecycle and acceptance states. It is not a central memory store, task tracker, or command hierarchy.
 
 | Council | Type / Scope | Related Project or Domain | Directory | Lifecycle Status | Acceptance Status | Last Reviewed |

@@ -1,5 +1,7 @@
 # <Council Name>
 
+> Optional template from the [earlier Council Sources repository workflow](../docs/COUNCIL-SOURCES-LEGACY.md).
+
 > Status: Draft | Version: 0.1 | Last updated: YYYY-MM-DD
 
 ## 1. Identity

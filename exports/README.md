@@ -1,5 +1,7 @@
 # Portable Source Exports
 
+> These profiles apply to [earlier Council Sources snapshots](../docs/COUNCIL-SOURCES-LEGACY.md). Council Designer V1.0 uses one generic Markdown document.
+
 Exports are generated, self-contained Markdown snapshots for a specific recipient and purpose. They help GPT, other Agents, or human collaborators understand the required system or Council context without browsing the entire repository.
 
 The repository's modular source files remain authoritative. An export is a derived snapshot, not a second source of truth.

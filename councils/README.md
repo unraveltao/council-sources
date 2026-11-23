@@ -1,5 +1,7 @@
 # Councils
 
+> This layout applies to records kept in the [earlier Council Sources repository format](../docs/COUNCIL-SOURCES-LEGACY.md). Council Designer V1.0 can read these records as supplied context.
+
 Each real Council lives in its own directory: councils/<slug>/.
 
 Minimum files:

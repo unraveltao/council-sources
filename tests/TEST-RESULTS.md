@@ -1,5 +1,7 @@
 # Council Sources — Test Results
 
+> Historical V0.3.0 evidence. See [V1.0 results](V1-TEST-RESULTS.md) for the standalone Skill.
+
 > Version: 0.3.0  
 > Last updated: 2026-11-18  
 > This is an evidence log. Do not mark tests Passed until the relevant procedure has actually been executed and its evidence reviewed.
